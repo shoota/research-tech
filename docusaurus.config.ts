@@ -32,6 +32,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {
