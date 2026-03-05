@@ -16,6 +16,8 @@
 id: <category>-<topic>
 title: <title>
 sidebar_position: <次の番号>
+last_update:
+  date: <今日の日付 YYYY-MM-DD>
 ---
 
 # <title>

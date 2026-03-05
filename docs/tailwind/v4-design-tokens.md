@@ -2,6 +2,8 @@
 id: tailwind-v4-design-tokens
 title: v4のデザイントークンについて
 sidebar_position: 1
+last_update:
+  date: 2026-03-05
 ---
 
 # Tailwind CSS v4 のデザイントークン

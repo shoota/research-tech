@@ -2,6 +2,8 @@
 id: tailwind-v4-nextjs-vitest-ecosystem
 title: v4のNext.js・Vitest利用とエコシステム
 sidebar_position: 4
+last_update:
+  date: 2026-03-05
 ---
 
 # Tailwind CSS v4 の Next.js・Vitest 利用とエコシステム

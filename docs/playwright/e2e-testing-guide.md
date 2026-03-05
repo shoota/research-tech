@@ -2,6 +2,8 @@
 id: playwright-e2e-testing-guide
 title: PlaywrightによるE2Eテスト実践ガイド
 sidebar_position: 2
+last_update:
+  date: 2026-03-05
 ---
 
 # PlaywrightによるE2Eテスト実践ガイド

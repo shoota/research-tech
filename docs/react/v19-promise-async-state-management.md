@@ -2,6 +2,8 @@
 id: react-v19-promise-async-state-management
 title: React v19のPromiseとAsync Reactによる状態管理の変革
 sidebar_position: 1
+last_update:
+  date: 2026-03-05
 ---
 
 # React v19のPromiseとAsync Reactによる状態管理の変革

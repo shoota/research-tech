@@ -2,6 +2,8 @@
 id: tailwind-design-tokens-concept
 title: デザイントークンの概念とTailwind CSSの設計変遷
 sidebar_position: 2
+last_update:
+  date: 2026-03-05
 ---
 
 # デザイントークンの概念的理解と、Tailwind CSS のデザイントークン設計の変遷

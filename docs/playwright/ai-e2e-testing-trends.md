@@ -2,6 +2,8 @@
 id: playwright-ai-e2e-testing-trends
 title: "E2Eテスト×AI：自動解析・修正のトレンド"
 sidebar_position: 3
+last_update:
+  date: 2026-03-05
 ---
 
 ## 概要

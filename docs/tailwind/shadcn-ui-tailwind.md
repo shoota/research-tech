@@ -2,6 +2,8 @@
 id: tailwind-shadcn-ui
 title: shadcn/ui の Tailwind CSS 利用パターン
 sidebar_position: 3
+last_update:
+  date: 2026-03-05
 ---
 
 # shadcn/ui の Tailwind CSS 利用パターン
