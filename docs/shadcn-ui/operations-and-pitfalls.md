@@ -6,6 +6,11 @@ last_update:
   date: 2026-03-06
 ---
 
+:::info 関連ドキュメント
+- [shadcn/ui の設計思想とアーキテクチャ](/docs/shadcn-ui/shadcn-ui-design-and-architecture) — デザインコンセプト、Radix/Base UI、テーマシステム
+- [shadcn/ui と類似デザインシステムの比較](/docs/shadcn-ui/shadcn-ui-comparison-with-alternatives) — MUI, Chakra UI, Ant Design 等との比較
+:::
+
 ## 概要
 
 shadcn/ui を実プロジェクトで運用する際に必要となる AI 連携、コンポーネントのアップグレード・カスタマイズ戦略、そして採用時に知っておくべき落とし穴とリスクについて調査した。shadcn/ui は「コンポーネントライブラリ」ではなく「コード配布プラットフォーム」であるため、従来の npm パッケージとは異なる運用知識が求められる。

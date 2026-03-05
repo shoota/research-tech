@@ -346,6 +346,11 @@ function Badge({ color }: { color: keyof typeof colorMap }) {
 
 プロダクトへの適用においては、デザイントークンを `@theme` で定義し、デザインシステムのパッケージとして CSS ファイルを共有する運用が効果的と考えられる。
 
+:::tip 関連ドキュメント
+- [Tailwind CSS v4 の Next.js・Vite セットアップ](/docs/tailwind/tailwind-v4-nextjs-vite-setup) — フレームワーク別のセットアップ手順
+- [shadcn/ui の設計思想とアーキテクチャ](/docs/shadcn-ui/shadcn-ui-design-and-architecture) — Tailwind v4 の `@theme inline` を活用したテーマシステムの実例
+:::
+
 ## 参考リンク
 
 - [Theme variables - Tailwind CSS](https://tailwindcss.com/docs/theme)

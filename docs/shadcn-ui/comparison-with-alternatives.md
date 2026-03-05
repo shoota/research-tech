@@ -8,6 +8,11 @@ last_update:
 
 # shadcn/ui と類似デザインシステムの比較
 
+:::info 関連ドキュメント
+- [shadcn/ui の設計思想とアーキテクチャ](/docs/shadcn-ui/shadcn-ui-design-and-architecture) — デザインコンセプト、Radix/Base UI、テーマシステム
+- [shadcn/ui の運用ガイド](/docs/shadcn-ui/shadcn-ui-operations-and-pitfalls) — AI連携、カスタマイズ、落とし穴
+:::
+
 ## 概要
 
 shadcn/ui を中心に、主要な React UI ライブラリ/デザインシステム 8 種を多角的に比較調査した。設計哲学、スタイリング方式、バンドルサイズ、カスタマイズ性、アクセシビリティ、TypeScript 対応、エコシステムなどの観点から、各ライブラリの特徴と適材適所を明らかにする。

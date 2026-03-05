@@ -6,6 +6,11 @@ last_update:
   date: 2026-03-06
 ---
 
+:::info 関連ドキュメント
+- [shadcn/ui と類似デザインシステムの比較](/docs/shadcn-ui/shadcn-ui-comparison-with-alternatives) — MUI, Chakra UI, Ant Design 等との比較
+- [shadcn/ui の運用ガイド](/docs/shadcn-ui/shadcn-ui-operations-and-pitfalls) — AI連携、カスタマイズ、落とし穴
+:::
+
 ## 概要
 
 shadcn/ui の設計思想（「ライブラリではなくコンポーネント集」というアプローチ）、Radix UI / Base UI の2系統アーキテクチャ、および CSS 変数ベースのテーマシステムについて調査した。
@@ -314,6 +319,91 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   --color-warning-foreground: var(--warning-foreground);
 }
 ```
+
+### 4. ユーティリティ関数と Tailwind 統合パターン
+
+#### cn() ヘルパー関数
+
+shadcn/ui の全コンポーネントで使用される中核ユーティリティ。`clsx` と `tailwind-merge` を組み合わせている。
+
+```ts title="lib/utils.ts"
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+// clsx: 条件付きクラス名の結合（falsy値の除外、配列・オブジェクト記法対応）
+// tailwind-merge: Tailwindクラスの競合解決（p-4 と p-2 が両方あれば後者を採用）
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+
+```tsx title="使用例"
+// 条件付きクラスの結合 + Tailwind 競合解決 + 外部からの上書き許可
+<div className={cn(
+  "rounded-lg p-4",           // ベーススタイル
+  isActive && "bg-primary",   // 条件付き
+  className                   // 外部からの上書き
+)} />
+```
+
+#### class-variance-authority (CVA)
+
+コンポーネントのバリアント（サイズ、色、状態等）を宣言的に定義するライブラリ。TypeScript の型としても抽出でき、props に型安全にマッピングされる。
+
+```tsx title="components/ui/button.tsx"
+import { cva, type VariantProps } from "class-variance-authority"
+
+const buttonVariants = cva(
+  // ベーススタイル
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive: "bg-destructive text-white hover:bg-destructive/90",
+        outline: "border border-input bg-background hover:bg-accent",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+```
+
+#### Tailwind v4 移行時の具体的な差分
+
+shadcn/ui の Tailwind v3 → v4 対応で発生する主な変更点:
+
+| 項目 | v3 | v4 |
+|------|----|----|
+| カラー形式 | `--primary: 0 0% 3.9%`（HSLチャンネル値） | `--primary: oklch(0.205 0 0)`（OKLCH完全値） |
+| Tailwind設定 | `tailwind.config.js` の `extend.colors` | CSS内の `@theme inline` |
+| カラー参照 | `hsl(var(--primary))` | `var(--primary)` |
+| アニメーション | `@plugin 'tailwindcss-animate'` | `@import "tw-animate-css"` |
+| サイズ指定 | `w-4 h-4` | `size-4` |
+| data属性 | なし | `data-slot="component-name"` 全コンポーネントに付与 |
+
+`data-slot` 属性により、親コンポーネントから子のスタイリングを Tailwind で制御しやすくなった:
+
+```tsx title="data-slotの活用"
+{/* 親から子のスロットを指定してスタイリング */}
+<Accordion className="[&_[data-slot=accordion-item]]:border-b">
+  ...
+</Accordion>
+```
+
+:::tip
+Tailwind CSS v4 のデザイントークンの仕組みについては [Tailwind CSS v4 のデザイントークン](/docs/tailwind/tailwind-v4-design-tokens) を、Next.js/Vite でのセットアップについては [Tailwind CSS v4 の Next.js・Vite セットアップ](/docs/tailwind/tailwind-v4-nextjs-vite-setup) を参照。
+:::
 
 ## 検証結果
 
