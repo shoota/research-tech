@@ -58,9 +58,12 @@ body {
 
 /* ===== Navbar ===== */
 .navbar {
-  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--custom-border-color);
   box-shadow: none;
+}
+
+.navbar__inner {
+  backdrop-filter: blur(12px);
 }
 
 .navbar__title {
