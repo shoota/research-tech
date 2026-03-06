@@ -8,6 +8,10 @@ last_update:
 
 # Tailwind CSS v4 のデザイントークン
 
+:::info 関連ドキュメント
+- [CSS ビルドシステムの全体像](/docs/css/css-build-system) — CSS プリプロセッサ・CSS Modules・型安全CSS の体系的な整理
+:::
+
 ## 概要
 
 Tailwind CSS v4 におけるデザイントークンの種類・構造、ソースファイルのスキャンの仕組み、クラス名の解決パイプラインについて調査した。v4 では JavaScript 設定ファイルが不要になり、CSS ネイティブな `@theme` ディレクティブでデザイントークンを一元管理する設計に刷新されている。
