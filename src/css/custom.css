@@ -1,3 +1,4 @@
+/* ===== Color Palette ===== */
 :root {
   --ifm-color-primary: #235880;
   --ifm-color-primary-dark: #1F4F73;
@@ -8,6 +9,23 @@
   --ifm-color-primary-lightest: #3279AB;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP', sans-serif;
+  --ifm-heading-font-weight: 700;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.75;
+  --ifm-leading: 1.5rem;
+
+  --ifm-background-color: #f6f8fa;
+  --ifm-background-surface-color: #fff;
+  --ifm-footer-background-color: #1a2a3a;
+  --ifm-footer-color: #8a9bb0;
+  --ifm-navbar-background-color: rgba(246, 248, 250, 0.85);
+
+  --custom-border-color: rgba(35, 88, 128, 0.08);
+  --custom-card-bg: #fff;
+  --custom-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --custom-subtle-text: #5a6a78;
 }
 
 [data-theme='dark'] {
@@ -19,4 +37,276 @@
   --ifm-color-primary-lighter: #72C0DF;
   --ifm-color-primary-lightest: #95D1E8;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --ifm-background-color: #0a0f1a;
+  --ifm-background-surface-color: #111827;
+  --ifm-footer-background-color: #060a12;
+  --ifm-footer-color: #6b7d8f;
+  --ifm-navbar-background-color: rgba(10, 15, 26, 0.85);
+
+  --custom-border-color: rgba(81, 174, 214, 0.1);
+  --custom-card-bg: rgba(255, 255, 255, 0.02);
+  --custom-card-shadow: none;
+  --custom-subtle-text: #6b7d8f;
+}
+
+/* ===== Global ===== */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--custom-border-color);
+  box-shadow: none;
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ===== Sidebar ===== */
+.menu {
+  font-size: 0.9rem;
+}
+
+.menu__link {
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background: rgba(35, 88, 128, 0.08);
+}
+
+[data-theme='dark'] .menu__link--active:not(.menu__link--sublist) {
+  background: rgba(81, 174, 214, 0.08);
+}
+
+/* ===== Doc Page Content ===== */
+.markdown {
+  --ifm-heading-color: #1a2a3a;
+}
+
+[data-theme='dark'] .markdown {
+  --ifm-heading-color: #e0e6ed;
+}
+
+.markdown h1 {
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--custom-border-color);
+  margin-bottom: 1.5rem;
+}
+
+.markdown h2 {
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--custom-border-color);
+}
+
+.markdown h3 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.markdown h4 {
+  font-size: 1.05rem;
+  margin-top: 1.5rem;
+}
+
+/* ===== Tables ===== */
+.markdown table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--custom-border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.markdown table thead tr {
+  background: rgba(35, 88, 128, 0.04);
+}
+
+[data-theme='dark'] .markdown table thead tr {
+  background: rgba(81, 174, 214, 0.06);
+}
+
+.markdown table th {
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 1px solid var(--custom-border-color);
+  padding: 0.75rem 1rem;
+}
+
+.markdown table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--custom-border-color);
+}
+
+.markdown table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown table tbody tr:hover {
+  background: rgba(35, 88, 128, 0.02);
+}
+
+[data-theme='dark'] .markdown table tbody tr:hover {
+  background: rgba(81, 174, 214, 0.03);
+}
+
+/* ===== Code Blocks ===== */
+.prism-code {
+  border-radius: 8px !important;
+  border: 1px solid var(--custom-border-color) !important;
+}
+
+div[class^='codeBlockTitle'],
+div[class*=' codeBlockTitle'] {
+  border-radius: 8px 8px 0 0 !important;
+  border: 1px solid var(--custom-border-color) !important;
+  border-bottom: none !important;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+div[class^='codeBlockTitle'] + pre .prism-code,
+div[class*=' codeBlockTitle'] + pre .prism-code {
+  border-radius: 0 0 8px 8px !important;
+}
+
+code {
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.88em;
+}
+
+/* ===== Admonitions (info, caution, etc.) ===== */
+.alert {
+  border-radius: 8px;
+  border-left-width: 3px;
+  --ifm-alert-padding-vertical: 1rem;
+  --ifm-alert-padding-horizontal: 1.25rem;
+}
+
+/* ===== Blockquotes ===== */
+blockquote {
+  border-left: 3px solid var(--ifm-color-primary);
+  background: rgba(35, 88, 128, 0.03);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.25rem;
+  color: var(--custom-subtle-text);
+}
+
+[data-theme='dark'] blockquote {
+  background: rgba(81, 174, 214, 0.04);
+}
+
+/* ===== Links ===== */
+.markdown a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(35, 88, 128, 0.2);
+  transition: border-color 0.15s ease;
+}
+
+[data-theme='dark'] .markdown a {
+  border-bottom-color: rgba(81, 174, 214, 0.2);
+}
+
+.markdown a:hover {
+  border-bottom-color: var(--ifm-color-primary);
+}
+
+/* ===== Table of Contents ===== */
+.table-of-contents__link {
+  font-size: 0.85rem;
+  transition: color 0.15s ease;
+}
+
+.table-of-contents__link--active {
+  font-weight: 600;
+}
+
+/* ===== Footer ===== */
+.footer {
+  border-top: 1px solid var(--custom-border-color);
+}
+
+.footer--dark {
+  background: var(--ifm-footer-background-color);
+}
+
+/* ===== Pagination ===== */
+.pagination-nav__link {
+  border-radius: 8px;
+  border-color: var(--custom-border-color);
+  transition: all 0.15s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+/* ===== Doc Card (category pages) ===== */
+article.card {
+  border-radius: 10px;
+  border-color: var(--custom-border-color);
+  background: var(--custom-card-bg);
+  box-shadow: var(--custom-card-shadow);
+  transition: all 0.2s ease;
+}
+
+article.card:hover {
+  border-color: rgba(35, 88, 128, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='dark'] article.card:hover {
+  border-color: rgba(81, 174, 214, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Scrollbar (dark mode) ===== */
+[data-theme='dark'] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Last Updated Info ===== */
+.theme-last-updated {
+  font-size: 0.82rem;
+  color: var(--custom-subtle-text);
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: rgba(35, 88, 128, 0.2);
+}
+
+[data-theme='dark'] ::selection {
+  background: rgba(81, 174, 214, 0.25);
 }
