@@ -10,6 +10,10 @@ last_update:
 
 E2Eテストの失敗を検知し、AIで自動的に失敗理由を解析・修正する技術トレンドについて調査した。Playwright Test Agents（v1.56〜）、MCP連携、商用サービスの動向、およびCI/CDパイプラインでの自動修正ワークフローを中心にまとめる。
 
+:::info 関連ドキュメント
+- [Agentic Coding ツール・AIモデルの全体像](/docs/agentic-coding/agentic-coding-tools-and-models-landscape) - AIコーディングツールとモデルの全体像
+:::
+
 ## 背景・動機
 
 E2Eテストは品質保証の要である一方、以下の課題が長年指摘されてきた。
