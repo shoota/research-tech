@@ -10,6 +10,17 @@ const config: Config = {
   url: 'https://shoota.github.io',
   baseUrl: '/research-tech/',
 
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/research-tech/img/favicon-180.png',
+      },
+    },
+  ],
+
   organizationName: 'shoota',
   projectName: 'research-tech',
 
@@ -43,6 +54,17 @@ const config: Config = {
   ],
 
   themeConfig: {
+    metadata: [
+      {name: 'description', content: 'React, CSS, テストなどWeb技術の調査・検証結果をまとめたドキュメントサイト'},
+      {property: 'og:title', content: 'Research Tech'},
+      {property: 'og:description', content: 'React, CSS, テストなどWeb技術の調査・検証結果をまとめたドキュメントサイト'},
+      {property: 'og:image', content: 'https://shoota.github.io/research-tech/img/og-image.png'},
+      {property: 'og:type', content: 'website'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+      {name: 'twitter:title', content: 'Research Tech'},
+      {name: 'twitter:description', content: 'React, CSS, テストなどWeb技術の調査・検証結果をまとめたドキュメントサイト'},
+      {name: 'twitter:image', content: 'https://shoota.github.io/research-tech/img/og-image.png'},
+    ],
     navbar: {
       title: 'Research Tech',
       items: [
