@@ -10,8 +10,8 @@ last_update:
 # CSS ビルドシステムの全体像 — プリプロセッサ・CSS Modules・型安全CSS
 
 :::info 関連ドキュメント
-- [Tailwind CSS v4 のデザイントークン](/docs/tailwind/tailwind-v4-design-tokens) — ユーティリティファースト CSS のトークン設計
-- [shadcn/ui の設計思想とアーキテクチャ](/docs/shadcn-ui/shadcn-ui-design-and-architecture) — Tailwind CSS ベースの UI コンポーネント設計
+- [Tailwind CSS v4 のデザイントークン](/docs/styling/tailwind/tailwind-v4-design-tokens) — ユーティリティファースト CSS のトークン設計
+- [shadcn/ui の設計思想とアーキテクチャ](/docs/styling/shadcn-ui/shadcn-ui-design-and-architecture) — Tailwind CSS ベースの UI コンポーネント設計
 :::
 
 ## 概要
@@ -759,7 +759,7 @@ src/
 
 - CSS ファイルの管理が不要
 - shadcn/ui 等のエコシステムとの相性が良い
-- 詳細は [Tailwind CSS v4 のデザイントークン](/docs/tailwind/tailwind-v4-design-tokens) を参照
+- 詳細は [Tailwind CSS v4 のデザイントークン](/docs/styling/tailwind/tailwind-v4-design-tokens) を参照
 
 ## 検証結果
 

@@ -9,7 +9,7 @@ last_update:
 # Tailwind CSS v4 のデザイントークン
 
 :::info 関連ドキュメント
-- [CSS ビルドシステムの全体像](/docs/css/css-build-system) — CSS プリプロセッサ・CSS Modules・型安全CSS の体系的な整理
+- [CSS ビルドシステムの全体像](/docs/styling/css/css-build-system) — CSS プリプロセッサ・CSS Modules・型安全CSS の体系的な整理
 :::
 
 ## 概要
@@ -351,8 +351,8 @@ function Badge({ color }: { color: keyof typeof colorMap }) {
 プロダクトへの適用においては、デザイントークンを `@theme` で定義し、デザインシステムのパッケージとして CSS ファイルを共有する運用が効果的と考えられる。
 
 :::tip 関連ドキュメント
-- [Tailwind CSS v4 の Next.js・Vite セットアップ](/docs/tailwind/tailwind-v4-nextjs-vite-setup) — フレームワーク別のセットアップ手順
-- [shadcn/ui の設計思想とアーキテクチャ](/docs/shadcn-ui/shadcn-ui-design-and-architecture) — Tailwind v4 の `@theme inline` を活用したテーマシステムの実例
+- [Tailwind CSS v4 の Next.js・Vite セットアップ](/docs/styling/tailwind/tailwind-v4-nextjs-vite-setup) — フレームワーク別のセットアップ手順
+- [shadcn/ui の設計思想とアーキテクチャ](/docs/styling/shadcn-ui/shadcn-ui-design-and-architecture) — Tailwind v4 の `@theme inline` を活用したテーマシステムの実例
 :::
 
 ## 参考リンク

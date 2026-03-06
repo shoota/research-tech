@@ -10,8 +10,8 @@ last_update:
 # Chakra UI v3 の設計思想とアーキテクチャ
 
 :::info 関連ドキュメント
-- [Chakra UI v3 の運用ガイド — AI連携・カスタマイズ・落とし穴](/docs/chakra-ui/chakra-ui-operations-and-ai) — AI連携、移行戦略、運用上の注意点
-- [shadcn/ui と類似デザインシステムの比較](/docs/shadcn-ui/shadcn-ui-comparison-with-alternatives) — shadcn/ui, MUI, Chakra UI 等の横断比較
+- [Chakra UI v3 の運用ガイド — AI連携・カスタマイズ・落とし穴](/docs/styling/chakra-ui/chakra-ui-operations-and-ai) — AI連携、移行戦略、運用上の注意点
+- [shadcn/ui と類似デザインシステムの比較](/docs/styling/shadcn-ui/shadcn-ui-comparison-with-alternatives) — shadcn/ui, MUI, Chakra UI 等の横断比較
 :::
 
 ## 概要

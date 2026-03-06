@@ -10,8 +10,8 @@ last_update:
 # Chakra UI v3 の運用ガイド — AI連携・カスタマイズ・落とし穴
 
 :::info 関連ドキュメント
-- [Chakra UI v3 の設計思想とアーキテクチャ](/docs/chakra-ui/chakra-ui-design-and-architecture) — レシピシステム、テーマ、エコシステム
-- [shadcn/ui の運用ガイド](/docs/shadcn-ui/shadcn-ui-operations-and-pitfalls) — shadcn/ui の AI連携・運用との比較
+- [Chakra UI v3 の設計思想とアーキテクチャ](/docs/styling/chakra-ui/chakra-ui-design-and-architecture) — レシピシステム、テーマ、エコシステム
+- [shadcn/ui の運用ガイド](/docs/styling/shadcn-ui/shadcn-ui-operations-and-pitfalls) — shadcn/ui の AI連携・運用との比較
 :::
 
 ## 概要

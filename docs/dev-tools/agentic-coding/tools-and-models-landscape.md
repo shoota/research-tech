@@ -12,7 +12,7 @@ last_update:
 Agentic Coding（AIエージェントによる自律的なコーディング）および Vibe Coding（自然言語でアプリを生成するスタイル）に利用される主要ツール、AIモデル、開発企業の関連を俯瞰的にまとめる。ツールとモデルの対応関係、各モデルの技術的特徴と類似性を明らかにする。
 
 :::info 関連ドキュメント
-- [E2Eテスト×AI：自動解析・修正のトレンド](/docs/playwright/playwright-ai-e2e-testing-trends) - AIコーディングツールのテスト領域での活用
+- [E2Eテスト×AI：自動解析・修正のトレンド](/docs/testing/playwright-ai-e2e-testing-trends) - AIコーディングツールのテスト領域での活用
 :::
 
 ## 背景・動機

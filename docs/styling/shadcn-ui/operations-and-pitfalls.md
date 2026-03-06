@@ -7,8 +7,8 @@ last_update:
 ---
 
 :::info 関連ドキュメント
-- [shadcn/ui の設計思想とアーキテクチャ](/docs/shadcn-ui/shadcn-ui-design-and-architecture) — デザインコンセプト、Radix/Base UI、テーマシステム
-- [shadcn/ui と類似デザインシステムの比較](/docs/shadcn-ui/shadcn-ui-comparison-with-alternatives) — MUI, Chakra UI, Ant Design 等との比較
+- [shadcn/ui の設計思想とアーキテクチャ](/docs/styling/shadcn-ui/shadcn-ui-design-and-architecture) — デザインコンセプト、Radix/Base UI、テーマシステム
+- [shadcn/ui と類似デザインシステムの比較](/docs/styling/shadcn-ui/shadcn-ui-comparison-with-alternatives) — MUI, Chakra UI, Ant Design 等との比較
 :::
 
 ## 概要

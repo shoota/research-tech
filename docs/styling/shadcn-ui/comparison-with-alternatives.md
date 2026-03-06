@@ -9,9 +9,9 @@ last_update:
 # shadcn/ui と類似デザインシステムの比較
 
 :::info 関連ドキュメント
-- [shadcn/ui の設計思想とアーキテクチャ](/docs/shadcn-ui/shadcn-ui-design-and-architecture) — デザインコンセプト、Radix/Base UI、テーマシステム
-- [shadcn/ui の運用ガイド](/docs/shadcn-ui/shadcn-ui-operations-and-pitfalls) — AI連携、カスタマイズ、落とし穴
-- [Chakra UI v3 の設計思想とアーキテクチャ](/docs/chakra-ui/chakra-ui-design-and-architecture) — Chakra UI v3 の詳細な設計調査
+- [shadcn/ui の設計思想とアーキテクチャ](/docs/styling/shadcn-ui/shadcn-ui-design-and-architecture) — デザインコンセプト、Radix/Base UI、テーマシステム
+- [shadcn/ui の運用ガイド](/docs/styling/shadcn-ui/shadcn-ui-operations-and-pitfalls) — AI連携、カスタマイズ、落とし穴
+- [Chakra UI v3 の設計思想とアーキテクチャ](/docs/styling/chakra-ui/chakra-ui-design-and-architecture) — Chakra UI v3 の詳細な設計調査
 :::
 
 ## 概要
