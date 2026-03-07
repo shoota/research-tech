@@ -1,19 +1,19 @@
 ---
 id: nextjs15-app-router
-title: Next.js 15 App Router 設計パターン
+title: Next.js 15/16 App Router 設計パターン
 sidebar_position: 5
-tags: [nextjs, app-router, react, rsc, ssr]
+tags: [nextjs, app-router, react, rsc, ssr, nextjs16, opennext, vinext]
 last_update:
   date: 2026-03-06
 ---
 
 ## 概要
 
-Next.js 15 の App Router が提供するアーキテクチャ、ルーティングパターン、キャッシュ戦略、Server Components / Server Actions との統合について調査した。
+Next.js 15/16 の App Router が提供するアーキテクチャ、ルーティングパターン、キャッシュ戦略、Server Components / Server Actions との統合について調査した。また、Next.js 16 での主要な変更点、および Next.js のセルフホスティングや代替実装として注目される OpenNext・vinext についても整理した。
 
 ## 背景・動機
 
-Next.js 15 は React Server Components（RSC）を基盤としたフルスタックフレームワークとして成熟し、App Router がデフォルトの推奨アーキテクチャとなっている。Parallel Routes、Intercepting Routes、PPR（Partial Prerendering）など高度なルーティング・レンダリング機能が追加され、設計パターンの選択肢が大幅に広がった。プロジェクトで Next.js を採用・移行する際の判断材料として、主要な設計パターンとベストプラクティスを整理する。
+Next.js 15 は React Server Components（RSC）を基盤としたフルスタックフレームワークとして成熟し、App Router がデフォルトの推奨アーキテクチャとなっている。Parallel Routes、Intercepting Routes、PPR（Partial Prerendering）など高度なルーティング・レンダリング機能が追加され、設計パターンの選択肢が大幅に広がった。2025年10月にリリースされた Next.js 16 では Cache Components の導入、Turbopack のデフォルト化、middleware から proxy への名称変更など、さらなるアーキテクチャの進化が行われた。また、Vercel 以外の環境での Next.js 運用を可能にする OpenNext や、Cloudflare が開発した Vite ベースの互換実装 vinext も登場している。プロジェクトで Next.js を採用・移行する際の判断材料として、主要な設計パターンとベストプラクティスを整理する。
 
 ## 調査内容
 
@@ -653,11 +653,206 @@ Next.js 15 の App Router は、Server Components をベースとした「サー
 
 **注意点:**
 
-- PPR は Next.js 15 時点では experimental であり、プロダクション利用には `cacheComponents`（Next.js 16+）の安定化を待つのが安全
+- PPR は Next.js 16 で Cache Components として再設計され、`cacheComponents: true` で有効化する形に進化した
 - キャッシュの 4 層構造とその相互作用は複雑であり、チーム内での理解共有が重要
 - Parallel Routes / Intercepting Routes は強力だが、ディレクトリ構造が複雑になりやすいため、使いどころを見極める必要がある
 
-プロジェクトへの適用としては、新規プロジェクトでは App Router を標準採用し、段階的に PPR や Parallel Routes を導入するのが現実的である。
+プロジェクトへの適用としては、新規プロジェクトでは App Router を標準採用し、段階的に Cache Components や Parallel Routes を導入するのが現実的である。
+
+### 9. Next.js 16 の主要な変更点
+
+Next.js 16 は 2025年10月にリリースされ、キャッシュモデルの刷新、ビルドツールの進化、アーキテクチャの明確化が行われた[[12]](#参考リンク)。
+
+#### Cache Components
+
+Cache Components は Next.js 16 の中心的な新機能で、`"use cache"` ディレクティブを軸にキャッシュを明示的かつ柔軟に制御する仕組みである[[12]](#参考リンク)。
+
+- 従来の App Router における暗黙的なキャッシュとは異なり、**完全にオプトイン方式**
+- PPR（Partial Prerendering）の完成形として位置づけられ、`experimental.ppr` フラグは削除された
+- `cacheComponents: true` で有効化する
+
+```ts title="next.config.ts"
+const nextConfig = {
+  // Cache Components を有効化
+  cacheComponents: true,
+}
+
+export default nextConfig
+```
+
+#### Turbopack デフォルト化
+
+Turbopack が全アプリケーションのデフォルトバンドラーとなった[[12]](#参考リンク)。
+
+- **2〜5倍高速な**プロダクションビルド
+- **最大10倍高速な** Fast Refresh
+- ファイルシステムキャッシュ（beta）により、dev サーバー再起動時のコンパイル時間が大幅短縮
+- webpack を使い続ける場合は `next dev --webpack` / `next build --webpack` で明示的に指定
+
+```ts title="next.config.ts"
+const nextConfig = {
+  experimental: {
+    // ファイルシステムキャッシュ（beta）を有効化
+    turbopackFileSystemCacheForDev: true,
+  },
+}
+
+export default nextConfig
+```
+
+#### `proxy.ts`（旧 `middleware.ts`）
+
+`middleware.ts` は `proxy.ts` にリネームされ、ネットワーク境界とルーティングの役割が明確になった[[12]](#参考リンク)。
+
+- ランタイムは Node.js に統一（Edge Runtime は非サポート）
+- `middleware.ts` は非推奨だがまだ動作する（将来のバージョンで削除予定）
+
+```ts title="proxy.ts"
+export default function proxy(request: NextRequest) {
+  return NextResponse.redirect(new URL('/home', request.url))
+}
+```
+
+#### 新しいキャッシュ API
+
+キャッシュ制御がより明示的になった[[12]](#参考リンク)。
+
+| API | 用途 |
+|---|---|
+| `revalidateTag(tag, profile)` | SWR 動作でタグ付きキャッシュを再検証（第2引数に `cacheLife` プロファイルが必須に） |
+| `updateTag(tag)` | Server Actions 専用。キャッシュを即座に期限切れにし、最新データを読み取る（read-your-writes） |
+| `refresh()` | Server Actions 専用。キャッシュされていないデータのみをリフレッシュ |
+
+```tsx title="app/actions/product.ts"
+'use server'
+
+import { revalidateTag, updateTag } from 'next/cache'
+
+// SWR 動作: キャッシュを返しつつバックグラウンドで再検証
+export async function refreshProducts() {
+  revalidateTag('products', 'max')
+}
+
+// read-your-writes: ユーザーに即座に変更を反映
+export async function updateProduct(id: string, data: FormData) {
+  await db.update('products', id, data)
+  updateTag(`product-${id}`)
+}
+```
+
+#### React Compiler（stable）
+
+React Compiler のビルトインサポートが安定版となった。コンポーネントを自動的にメモ化し、`useMemo` / `useCallback` の手動記述が不要になる[[12]](#参考リンク)。
+
+```ts title="next.config.ts"
+const nextConfig = {
+  // React Compiler を有効化（デフォルトは無効）
+  reactCompiler: true,
+}
+
+export default nextConfig
+```
+
+#### React 19.2 の新機能
+
+Next.js 16 は React 19.2 を同梱し、以下の機能が利用可能になった[[12]](#参考リンク)。
+
+- **View Transitions**: ナビゲーションや状態遷移時に要素をアニメーションする API
+- **`useEffectEvent`**: Effect から非リアクティブなロジックを抽出するフック
+- **`<Activity>`**: `display: none` で UI を隠しつつ状態を維持するコンポーネント
+
+#### ルーティングの最適化
+
+- **レイアウト重複排除**: 共通レイアウトを持つ複数の URL をプリフェッチする際、レイアウトが1回だけダウンロードされるようになった
+- **差分プリフェッチ**: キャッシュにない部分のみをプリフェッチし、ネットワーク転送量を削減
+
+#### 破壊的変更
+
+| 変更 | 詳細 |
+|---|---|
+| Node.js 20.9+ 必須 | Node.js 18 はサポート外 |
+| 同期 API の完全削除 | `params`, `searchParams`, `cookies()`, `headers()` 等は `await` 必須 |
+| AMP サポート削除 | `useAmp` 等すべての AMP API が削除 |
+| `next lint` コマンド削除 | ESLint / Biome を直接使用 |
+| Parallel Routes の `default.js` 必須化 | すべてのスロットに明示的な `default.js` が必要 |
+| `experimental.ppr` 削除 | `cacheComponents` に移行 |
+| `middleware.ts` 非推奨 | `proxy.ts` に移行 |
+
+### 10. Next.js のセルフホスティングと代替実装
+
+#### OpenNext
+
+OpenNext は、Next.js を Vercel 以外の環境でセルフホストするためのオープンソースアダプターである[[13]](#参考リンク)。
+
+**課題**: Next.js は Remix や Astro とは異なり、セルフホスティングの公式サポートが限定的で、Vercel 以外の環境で全機能を動かすのが困難だった。
+
+**仕組み**: Next.js のビルド出力を各プラットフォーム向けに変換する。
+
+| プラットフォーム | メンテナー |
+|---|---|
+| AWS（Lambda） | SST コミュニティ |
+| Cloudflare Workers | Cloudflare チーム |
+| Netlify | Netlify チーム |
+
+**特徴**:
+
+- Next.js の全機能サポートを目指している
+- NHS England、Udacity、Gymshark UK など多数の本番環境で稼働中
+- SST、Cloudflare、Netlify の各チームが協力してメンテナンス
+
+```bash
+# AWS へのデプロイ例（SST 経由）
+npx sst deploy
+```
+
+**Next.js 16 との関連**: Next.js 16 では Build Adapters API（alpha）が導入され、カスタムアダプターがビルドプロセスにフックできるようになった。これにより OpenNext のようなプロジェクトがより公式にサポートされる方向に進んでいる[[12]](#参考リンク)。
+
+#### vinext
+
+vinext は Cloudflare が 2026年2月に公開した、**Next.js の API サーフェスを Vite で再実装した**プロジェクトである[[14]](#参考リンク)。
+
+**コンセプト**: 既存の Next.js アプリケーションをコード変更なしで移行可能な「ドロップインリプレースメント」を目指す。
+
+| 比較項目 | vinext | Next.js 16 |
+|---|---|---|
+| ビルド時間 | 1.67秒 | 7.38秒 |
+| バンドルサイズ | 72.9KB | 168.9KB |
+| 基盤技術 | Vite 8 / Rolldown | Turbopack |
+
+**対応する Next.js API**:
+
+- Next.js 16 API の約 94% に対応
+- App Router / Pages Router（ネストレイアウト、loading、error boundary）
+- React Server Components（`use client` / `use server`）
+- Server Actions
+- ISR・キャッシュ
+- Middleware / Proxy
+- 33個の `next/*` モジュールを自動シム
+
+**Traffic-aware Pre-Rendering（TPR）**: vinext 独自の実験的機能で、実際のトラフィックデータに基づいてページを事前レンダリングする。100,000ページのうちトラフィックの90%をカバーする約200ページのみを事前生成し、残りはオンデマンド SSR で処理する[[14]](#参考リンク)。
+
+**導入方法**:
+
+```bash
+# 自動 CLI 移行
+npx vinext init
+
+# デプロイ（Cloudflare Workers）
+vinext deploy
+```
+
+**注意点**: vinext は実験的ソフトウェアであり、2026年3月時点では本番環境での利用は慎重に検討する必要がある。AI（Claude）を活用して1週間で開発されたという経緯もあり、エッジケースでの互換性が未検証の部分がある。
+
+#### OpenNext vs vinext の比較
+
+| 観点 | OpenNext | vinext |
+|---|---|---|
+| アプローチ | Next.js のビルド出力を変換 | Next.js API を Vite で再実装 |
+| Next.js 本体への依存 | あり（Next.js でビルド後に変換） | なし（独自ビルド） |
+| 成熟度 | 本番稼働実績多数 | 実験的（2026年2月公開） |
+| デプロイ先 | AWS / Cloudflare / Netlify | Cloudflare Workers（他も Nitro 経由で対応） |
+| 互換性 | Next.js 全機能を目標 | Next.js API の約94% |
+| ユースケース | Vercel 以外で Next.js をそのまま使いたい | Vite エコシステムで Next.js 互換の開発体験が欲しい |
 
 ## 参考リンク
 
@@ -672,3 +867,6 @@ Next.js 15 の App Router は、Server Components をベースとした「サー
 9. [Next.js Caching Evolution: From v14 to v15](https://dev.to/ahr_dev/nextjs-caching-evolution-from-v14-to-v15-and-the-cache-components-era-5goo)
 10. [Getting Started: Server and Client Components | Next.js](https://nextjs.org/docs/app/getting-started/server-and-client-components)
 11. [Exploring Next.js 15 and Server Actions: Features and Best Practices](https://dev.to/brayancodes/exploring-nextjs-15-and-server-actions-features-and-best-practices-1393)
+12. [Next.js 16 | Next.js](https://nextjs.org/blog/next-16)
+13. [OpenNext](https://opennext.js.org/)
+14. [vinext — The Next.js API surface, reimplemented on Vite](https://vinext.io/)
