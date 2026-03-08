@@ -12,6 +12,10 @@ last_update:
 
 React v19で導入された非同期関連の新機能（`use()`フック、`useOptimistic`、`useTransition`の拡張、Server Components、Actions）が、GraphQLクライアント（Apollo Client、urql、Relay）との統合においてどのような価値をもたらすかを調査した。
 
+:::info 関連ドキュメント
+- [Apollo Client v4 + graphql-codegen + Nxモノレポ設定ガイド](../graphql/apollo-client-v4-codegen-monorepo)
+:::
+
 ## 背景・動機
 
 React v19は2024年12月に正式リリースされ[[1]](#参考リンク)、非同期処理・データ取得に関する多くの新APIが安定版として提供された。GraphQLクライアントライブラリはこれらのAPIへの対応を進めており、従来のローディング/エラー状態管理のパターンから、Suspense・Error Boundaryベースの宣言的パターンへの移行が加速している。この移行がGraphQL通信のDXとUXにどう影響するかを整理する。
