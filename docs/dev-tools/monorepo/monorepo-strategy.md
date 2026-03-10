@@ -15,6 +15,7 @@ last_update:
 
 :::info 関連ドキュメント
 - [Apollo Client v4 + graphql-codegen + Nxモノレポ設定ガイド](../../graphql/apollo-client-v4-codegen-monorepo)
+- [Knip - JavaScript/TypeScript プロジェクトの未使用コード検出ツール](../knip)
 :::
 
 ## 背景・動機
