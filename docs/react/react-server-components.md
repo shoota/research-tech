@@ -9,7 +9,11 @@ last_update:
 
 ## 概要
 
-React Server Components（RSC）と Server Actions の仕組み、メンタルモデル、および Next.js App Router を前提とした実践的な設計パターンを調査した。Server/Client Component の使い分け、データフェッチ戦略、フォーム処理、Composition パターン、パフォーマンス特性、制約と注意点を包括的にまとめる。
+React Server Components（RSC）と Server Actions の仕組み、メンタルモデル、および Next.js App Router を前提とした実践的な設計パターンを調査した。
+
+:::info 関連ドキュメント
+- [Vite と React Server Components - @vitejs/plugin-rsc の仕組みと意義](../dev-tools/vite/vite-plugin-rsc)
+:::Server/Client Component の使い分け、データフェッチ戦略、フォーム処理、Composition パターン、パフォーマンス特性、制約と注意点を包括的にまとめる。
 
 ## 背景・動機
 

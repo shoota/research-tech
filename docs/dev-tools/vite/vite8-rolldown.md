@@ -11,7 +11,11 @@ last_update:
 
 ## 概要
 
-Vite 8（2026年3月時点ベータ版）はバンドラーをesbuild + RollupからRust製のRolldownに統一した次世代ビルドツールである。本ドキュメントではアーキテクチャ変更、パフォーマンス改善、Environment API、移行方法、VoidZeroエコシステムの全体像を調査した。
+Vite 8（2026年3月時点ベータ版）はバンドラーをesbuild + RollupからRust製のRolldownに統一した次世代ビルドツールである。
+
+:::info 関連ドキュメント
+- [Vite と React Server Components - @vitejs/plugin-rsc の仕組みと意義](./vite-plugin-rsc)
+:::本ドキュメントではアーキテクチャ変更、パフォーマンス改善、Environment API、移行方法、VoidZeroエコシステムの全体像を調査した。
 
 ## 背景・動機
 
