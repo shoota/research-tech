@@ -9,7 +9,11 @@ last_update:
 
 ## 概要
 
-Next.js 15/16 の App Router が提供するアーキテクチャ、ルーティングパターン、キャッシュ戦略、Server Components / Server Actions との統合について調査した。また、Next.js 16 での主要な変更点、および Next.js のセルフホスティングや代替実装として注目される OpenNext・vinext についても整理した。
+Next.js 15/16 の App Router が提供するアーキテクチャ、ルーティングパターン、キャッシュ戦略、Server Components / Server Actions との統合について調査した。
+
+:::info 関連ドキュメント
+- [vinext - Next.js API を Vite 上に再実装した実験的フレームワーク](../frameworks/vinext)
+:::また、Next.js 16 での主要な変更点、および Next.js のセルフホスティングや代替実装として注目される OpenNext・vinext についても整理した。
 
 ## 背景・動機
 
