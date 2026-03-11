@@ -122,20 +122,17 @@ Vite 6 では**すべての環境が単一プロセス内でビルド**される
 
 `@vitejs/plugin-rsc` は Vite の Environment API を使い、RSC に必要な 3 環境を構成する[[4]](#参考リンク):
 
-```
-┌──────────────────────────────────────────────────────┐
-│                   Vite Dev Server                    │
-│                                                      │
-│  ┌─────────┐    RSC Payload    ┌─────────┐          │
-│  │   RSC   │ ───────────────→  │   SSR   │ → HTML   │
-│  │  環境   │                   │  環境   │          │
-│  └─────────┘                   └─────────┘          │
-│       │                                              │
-│       │        RSC Payload     ┌─────────┐          │
-│       └───────────────────→    │ Client  │ → DOM    │
-│                                │  環境   │          │
-│                                └─────────┘          │
-└──────────────────────────────────────────────────────┘
+```mermaid
+graph LR
+    subgraph "Vite Dev Server"
+        RSC["RSC 環境"]
+        SSR["SSR 環境"]
+        Client["Client 環境"]
+        RSC -- "RSC Payload" --> SSR
+        RSC -- "RSC Payload" --> Client
+    end
+    SSR --> HTML["HTML"]
+    Client --> DOM["DOM"]
 ```
 
 | 環境 | モジュール条件 | 役割 |

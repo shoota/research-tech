@@ -28,21 +28,14 @@ CSS のビルドシステムに関わる技術を体系的に調査した。CSS 
 
 モダンフロントエンドにおける CSS の処理は、以下のパイプラインで行われる:
 
-```
-ソースファイル        ビルド時の変換                 ブラウザ
-─────────────    ──────────────────────────    ─────────
-.scss / .less  → プリプロセッサ(Sass/Less)  ──┐
-                                               ├→ CSS
-.css           ──────────────────────────────┘
-                                               │
-              CSS Modules (クラス名のハッシュ化) ←┤
-                                               │
-              PostCSS / Lightning CSS          ←┤
-              (ベンダープレフィックス・           │
-               ネスト展開・ミニファイ)            │
-                                               ↓
-                                          最終 CSS
-                                         (+ JS マッピング)
+```mermaid
+graph LR
+    SCSS[".scss / .less"] --> Pre["プリプロセッサ<br/>(Sass / Less)"]
+    Pre --> CSS["CSS"]
+    RawCSS[".css"] --> CSS
+    CSS --> Modules["CSS Modules<br/>(クラス名のハッシュ化)"]
+    Modules --> Post["PostCSS / Lightning CSS<br/>(ベンダープレフィックス・<br/>ネスト展開・ミニファイ)"]
+    Post --> Final["最終 CSS<br/>(+ JS マッピング)"]
 ```
 
 各ステージは独立しており、プロジェクトの要件に応じて組み合わせる。例えば「SCSS + CSS Modules + PostCSS」「CSS + Lightning CSS」「vanilla-extract（TypeScript で直接記述）」など、多様な構成が可能。

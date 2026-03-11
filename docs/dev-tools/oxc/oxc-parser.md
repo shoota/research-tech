@@ -82,11 +82,11 @@ OXC Parserは他のすべてのOXCプロダクトの基盤である：
 
 ```
 ソースコード
-  └── Parser (AST生成)
-        ├── Oxlint (リント)
-        ├── Oxfmt (フォーマット)
-        ├── Transformer (変換)
-        └── Minifier (圧縮)
+  \-- Parser (AST生成)
+        +-- Oxlint (リント)
+        +-- Oxfmt (フォーマット)
+        +-- Transformer (変換)
+        \-- Minifier (圧縮)
 ```
 
 Rolldownもバンドル時のコード解析にOXC Parserを使用している[[3]](#参考リンク)。

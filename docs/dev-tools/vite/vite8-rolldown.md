@@ -33,16 +33,21 @@ VoidZero社が開発するRolldownは、この課題をRust製の単一バンド
 
 Vite 8における最大の変更は、バンドラーの統一である[[1]](#参考リンク)。
 
-```text
-【Vite 7以前】                    【Vite 8】
-┌────────────────────┐          ┌────────────────────┐
-│       Vite         │          │       Vite         │
-├────────┬───────────┤          ├────────────────────┤
-│esbuild │  Rollup   │    →     │     Rolldown       │
-│(dev)   │ (prod)    │          │   (dev + prod)     │
-├────────┴───────────┤          ├────────────────────┤
-│    各種プラグイン     │          │  OXC (compiler)    │
-└────────────────────┘          └────────────────────┘
+```mermaid
+graph TD
+    subgraph "Vite 7以前"
+        V7["Vite"]
+        V7 --> E["esbuild<br/>(dev)"]
+        V7 --> R["Rollup<br/>(prod)"]
+        E --> P7["各種プラグイン"]
+        R --> P7
+    end
+
+    subgraph "Vite 8"
+        V8["Vite"]
+        V8 --> RD["Rolldown<br/>(dev + prod)"]
+        RD --> OXC["OXC (compiler)"]
+    end
 ```
 
 **統一による利点:**
@@ -338,31 +343,17 @@ Vite+はMITライセンスのOSSプロジェクト（Vite, Vitest, Rolldown, OXC
 
 VoidZero社が推進するJavaScriptツールチェーンの全体構造:
 
-```text
-┌──────────────────────────────────────────────────────┐
-│              Vite+ (商用CLIレイヤー)                    │
-│   new / test / lint / fmt / lib / run / ui           │
-├──────────────────────────────────────────────────────┤
-│                                                      │
-│  ┌──────────┐  ┌──────────┐  ┌───────────────────┐  │
-│  │   Vite   │  │  Vitest  │  │     tsdown        │  │
-│  │ ビルドツール│  │ テスト    │  │ ライブラリバンドル  │  │
-│  └────┬─────┘  └────┬─────┘  └────────┬──────────┘  │
-│       │             │                 │              │
-│  ┌────┴─────────────┴─────────────────┴──────────┐  │
-│  │              Rolldown (バンドラー)                │  │
-│  │      Rollup互換API / Rust実装 / 10-30x高速      │  │
-│  └────────────────────┬──────────────────────────┘  │
-│                       │                              │
-│  ┌────────────────────┴──────────────────────────┐  │
-│  │           OXC (コンパイラ基盤)                    │  │
-│  │  Parser / Transformer / Minifier / Resolver   │  │
-│  │  Oxlint / Oxfmt                               │  │
-│  └───────────────────────────────────────────────┘  │
-│                                                      │
-├──────────────────────────────────────────────────────┤
-│                    Rust 基盤                          │
-└──────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    VP["Vite+ (商用CLIレイヤー)<br/>new / test / lint / fmt / lib / run / ui"]
+    VP --> Vite["Vite<br/>ビルドツール"]
+    VP --> Vitest["Vitest<br/>テスト"]
+    VP --> tsdown["tsdown<br/>ライブラリバンドル"]
+    Vite --> RD["Rolldown (バンドラー)<br/>Rollup互換API / Rust実装 / 10-30x高速"]
+    Vitest --> RD
+    tsdown --> RD
+    RD --> OXC["OXC (コンパイラ基盤)<br/>Parser / Transformer / Minifier / Resolver<br/>Oxlint / Oxfmt"]
+    OXC --> Rust["Rust 基盤"]
 ```
 
 すべてのOSSコンポーネント（Vite, Vitest, Rolldown, OXC）はMITライセンスで永久に公開される[[6]](#参考リンク)。

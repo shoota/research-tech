@@ -133,14 +133,14 @@ test.describe('Adding New Todos', () => {
 
 ```text title="プロジェクト構造"
 repo/
-├── .github/              # エージェント定義ファイル
-├── specs/                # 人間が読めるテスト計画（Markdown）
-│   └── basic-operations.md
-├── tests/                # 生成されたPlaywrightテスト
-│   ├── seed.spec.ts      # シードテスト（環境構築）
-│   └── create/
-│       └── add-valid-todo.spec.ts
-└── playwright.config.ts
++-- .github/              # エージェント定義ファイル
++-- specs/                # 人間が読めるテスト計画（Markdown）
+|   \-- basic-operations.md
++-- tests/                # 生成されたPlaywrightテスト
+|   +-- seed.spec.ts      # シードテスト（環境構築）
+|   \-- create/
+|       \-- add-valid-todo.spec.ts
+\-- playwright.config.ts
 ```
 
 #### Auto Playwright / ZeroStep

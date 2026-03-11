@@ -71,13 +71,13 @@ OXCはVoidZero社が推進する統一ツールチェーンの基盤コンパイ
 
 ```
 Vite+ (CLI / DX レイヤー)
-  └── Vite 8 (ビルドツール)
-        └── Rolldown (バンドラー)
-              └── OXC (コンパイラ基盤)
-                    ├── Parser
-                    ├── Transformer
-                    ├── Minifier
-                    └── Resolver
+  \-- Vite 8 (ビルドツール)
+        \-- Rolldown (バンドラー)
+              \-- OXC (コンパイラ基盤)
+                    +-- Parser
+                    +-- Transformer
+                    +-- Minifier
+                    \-- Resolver
 ```
 
 **Rolldown**はVite 8のバンドラーとしてesbuild + Rollupの組み合わせを置き換え、内部でOXCのParser・Transformer・Minifier・Resolverを使用している[[5]](#参考リンク)。

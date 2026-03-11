@@ -335,19 +335,19 @@ jobs:
 
 ```text
 my-monorepo/
-├── apps/
-│   ├── web/              # メインの Web アプリケーション
-│   ├── admin/            # 管理画面
-│   └── docs/             # ドキュメントサイト
-├── packages/
-│   ├── ui/               # 共通 UI コンポーネント
-│   ├── utils/            # ユーティリティ関数
-│   ├── config-eslint/    # 共有 ESLint 設定
-│   ├── config-typescript/ # 共有 TypeScript 設定
-│   └── api-client/       # API クライアント
-├── turbo.json            # または nx.json
-├── pnpm-workspace.yaml
-└── package.json
++-- apps/
+|   +-- web/              # メインの Web アプリケーション
+|   +-- admin/            # 管理画面
+|   \-- docs/             # ドキュメントサイト
++-- packages/
+|   +-- ui/               # 共通 UI コンポーネント
+|   +-- utils/            # ユーティリティ関数
+|   +-- config-eslint/    # 共有 ESLint 設定
+|   +-- config-typescript/ # 共有 TypeScript 設定
+|   \-- api-client/       # API クライアント
++-- turbo.json            # または nx.json
++-- pnpm-workspace.yaml
+\-- package.json
 ```
 
 #### 共有パッケージの設計

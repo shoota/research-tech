@@ -216,23 +216,23 @@ function greet(user: User): string {
 
 ```
 SourceFile
-├── InterfaceDeclaration (User)
-│   ├── Identifier ("User")
-│   ├── PropertySignature (name: string)
-│   │   ├── Identifier ("name")
-│   │   └── StringKeyword
-│   └── PropertySignature (age: number)
-│       ├── Identifier ("age")
-│       └── NumberKeyword
-└── FunctionDeclaration (greet)
-    ├── Identifier ("greet")
-    ├── Parameter (user: User)
-    │   ├── Identifier ("user")
-    │   └── TypeReference (User)
-    ├── StringKeyword (戻り値型)
-    └── Block
-        └── ReturnStatement
-            └── TemplateExpression
++-- InterfaceDeclaration (User)
+|   +-- Identifier ("User")
+|   +-- PropertySignature (name: string)
+|   |   +-- Identifier ("name")
+|   |   \-- StringKeyword
+|   \-- PropertySignature (age: number)
+|       +-- Identifier ("age")
+|       \-- NumberKeyword
+\-- FunctionDeclaration (greet)
+    +-- Identifier ("greet")
+    +-- Parameter (user: User)
+    |   +-- Identifier ("user")
+    |   \-- TypeReference (User)
+    +-- StringKeyword (戻り値型)
+    \-- Block
+        \-- ReturnStatement
+            \-- TemplateExpression
 ```
 
 `InterfaceDeclaration` や `PropertySignature` は TypeScript 固有のノードであり、ESTree 仕様には存在しない。これが TypeScript AST と ESTree AST の違いの一例である。

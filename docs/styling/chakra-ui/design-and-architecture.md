@@ -86,11 +86,11 @@ Chakra UI の作者 Segun Adebayo は、3つの相補的なプロジェクトか
 
 ```
 Chakraverse エコシステム
-├── Zag.js          — ステートマシン駆動のUIロジック（フレームワーク非依存）
-├── Ark UI           — Zag.js ベースのヘッドレスUIコンポーネント（React/Vue/Svelte/Solid対応）
-├── Panda CSS        — ビルド時CSS-in-JS（静的解析ベース）
-├── Chakra UI v3     — Ark UI + Emotion によるスタイル付きコンポーネント
-└── Park UI          — Ark UI + Panda CSS によるスタイル付きコンポーネント
++-- Zag.js          — ステートマシン駆動のUIロジック（フレームワーク非依存）
++-- Ark UI           — Zag.js ベースのヘッドレスUIコンポーネント（React/Vue/Svelte/Solid対応）
++-- Panda CSS        — ビルド時CSS-in-JS（静的解析ベース）
++-- Chakra UI v3     — Ark UI + Emotion によるスタイル付きコンポーネント
+\-- Park UI          — Ark UI + Panda CSS によるスタイル付きコンポーネント
 ```
 
 **各レイヤーの役割:**
