@@ -17,6 +17,7 @@ vinext は Cloudflare が開発した実験的フレームワークで、Next.js
 - [Next.js 15/16 App Router 設計パターン](../react/nextjs15-app-router)
 - [Vite と React Server Components - @vitejs/plugin-rsc の仕組みと意義](../dev-tools/vite/vite-plugin-rsc)
 - [Vite 8 + Rolldown - Rustベースの次世代ビルドツール](../dev-tools/vite/vite8-rolldown)
+- [Hono - Web Standards ベースの超軽量マルチランタイムWebフレームワーク](../frameworks/hono) - Cloudflare Workers 上の別アプローチ
 :::
 
 ## 背景・動機

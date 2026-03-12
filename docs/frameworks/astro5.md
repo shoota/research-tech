@@ -13,6 +13,10 @@ last_update:
 
 Astro 5 は、コンテンツサイト構築に特化した Web フレームワーク Astro のメジャーバージョンである。Content Layer API、Server Islands、Vite 6 統合などの新機能を搭載し、コンテンツファーストのアーキテクチャをさらに強化している。
 
+:::info 関連ドキュメント
+- [Hono - Web Standards ベースの超軽量マルチランタイムWebフレームワーク](../frameworks/hono) - HonoX が同じ Islands Architecture を採用
+:::
+
 ## 背景・動機
 
 本プロジェクト（research-tech）は Docusaurus で構築されているが、コンテンツサイト向けフレームワークの選択肢として Astro の存在感が増している。Islands Architecture によるゼロ JS デフォルト、柔軟なコンテンツ管理、複数フレームワークの共存といった特徴は、コンテンツサイトの構築・運用において重要な検討材料となる。Astro 5 で導入された Content Layer や Server Islands の実用性を調査し、既存の SSG/フレームワークとの比較を行う。
