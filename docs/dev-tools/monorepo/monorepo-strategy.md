@@ -14,6 +14,7 @@ last_update:
 モノレポ（Monorepo）は、複数のプロジェクトやパッケージを単一のリポジトリで管理する開発戦略である。本ドキュメントでは、モノレポの基本的なメリット・デメリットを整理したうえで、代表的なモノレポツールである Turborepo と Nx の仕組み・設計思想・機能比較を調査し、pnpm workspaces や Changesets との組み合わせによる実践的な導入パターンをまとめた。
 
 :::info 関連ドキュメント
+- [Vite+ - 統合ツールチェーンとモノレポサポート](../vite/vite-plus)
 - [Apollo Client v4 + graphql-codegen + Nxモノレポ設定ガイド](../../graphql/apollo-client-v4-codegen-monorepo)
 - [Knip - JavaScript/TypeScript プロジェクトの未使用コード検出ツール](../knip)
 :::
