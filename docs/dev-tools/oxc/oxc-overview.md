@@ -13,6 +13,12 @@ last_update:
 
 OXC（読み：オー・エックス・シー）は、Rustで構築されたJavaScript/TypeScript向け高性能ツール群である。VoidZero社が開発を主導し、Viteエコシステムの次世代基盤として位置付けられている。
 
+:::info 関連ドキュメント
+- [VoidZero エコシステム全体像 - プロダクト・成熟度・言語選定](../voidzero-ecosystem)
+- [Vite 8 + Rolldown - Rustベースの次世代ビルドツール](../vite/vite8-rolldown)
+- [Vite+ - 統合ツールチェーンとモノレポサポート](../vite/vite-plus)
+:::
+
 ## 背景・動機
 
 JavaScript開発ツールチェーンは長年、パフォーマンスの課題を抱えてきた。ESLint・Prettier・webpack・Babelなど広く使われるツールはJavaScriptで書かれており、大規模プロジェクトではリント・フォーマット・ビルドに数分かかることも珍しくない。OXCはこの問題をRustによるネイティブ実装で根本的に解決するプロジェクトとして誕生した[[1]](#参考リンク)。

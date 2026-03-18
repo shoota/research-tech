@@ -14,6 +14,7 @@ last_update:
 Vite+（CLI名: `vp`）は VoidZero 社が開発する「The Unified Toolchain for the Web」であり、Vite・Vitest・Rolldown・OXC（Oxlint / Oxfmt）・tsdown・Vite Task を単一のバイナリに統合したWeb開発ツールチェーンである[[1]](#参考リンク)。2026年3月時点でAlpha版がOSSとして公開されており、パブリックプレビューは2026年前半を予定している[[2]](#参考リンク)。
 
 :::info 関連ドキュメント
+- [VoidZero エコシステム全体像 - プロダクト・成熟度・言語選定](../voidzero-ecosystem)
 - [Vite 8 + Rolldown - Rustベースの次世代ビルドツール](./vite8-rolldown)
 - [OXC（The JavaScript Oxidation Compiler）全体像](../oxc/oxc-overview)
 - [モノレポ戦略 - Turborepo / Nx によるスケーラブルな開発基盤](../monorepo/monorepo-strategy)

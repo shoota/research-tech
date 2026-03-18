@@ -14,6 +14,7 @@ last_update:
 Vite 8（2026年3月12日正式リリース[[1]](#参考リンク)）はバンドラーをesbuild + RollupからRust製のRolldownに統一した次世代ビルドツールである。Vite 2以来最大のアーキテクチャ変更であり、10〜30倍のビルド高速化を実現する。
 
 :::info 関連ドキュメント
+- [VoidZero エコシステム全体像 - プロダクト・成熟度・言語選定](../voidzero-ecosystem)
 - [Vite と React Server Components - @vitejs/plugin-rsc の仕組みと意義](./vite-plugin-rsc)
 - [Vite+ - 統合ツールチェーンとモノレポサポート](./vite-plus)
 :::
