@@ -1,6 +1,7 @@
 ---
 id: tailwind-v4-design-tokens
 title: v4のデザイントークンについて
+description: "Tailwind CSS v4の@themeディレクティブによるCSSネイティブなデザイントークン管理、ソーススキャンの仕組み、クラス名解決パイプラインを調査。"
 sidebar_position: 1
 last_update:
   date: 2026-03-05

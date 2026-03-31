@@ -1,6 +1,7 @@
 ---
 id: vite-plus
 title: Vite+ - 統合ツールチェーンとモノレポサポート
+description: "Vite・Vitest・Rolldown・OXCを単一バイナリに統合したVite+の機能、モノレポ対応のVite Task、Alpha版の現状と今後の展望。"
 sidebar_position: 3
 tags: [vite, vite-plus, voidzero, monorepo, task-runner, toolchain, rust]
 last_update:

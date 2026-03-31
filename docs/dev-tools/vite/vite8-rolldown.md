@@ -1,6 +1,7 @@
 ---
 id: vite8-rolldown
 title: Vite 8 + Rolldown - Rustベースの次世代ビルドツール
+description: "Vite 8のバンドラーをRust製Rolldownに統一したアーキテクチャ変更、10〜30倍のビルド高速化、Environment API、移行方法を調査。"
 sidebar_position: 1
 tags: [vite, rolldown, oxc, bundler, rust, voidzero]
 last_update:

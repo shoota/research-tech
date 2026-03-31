@@ -1,6 +1,7 @@
 ---
 id: intro
 title: はじめに
+description: "Web技術の調査・検証結果をまとめるドキュメントサイトの紹介。カテゴリ構成とAI調査ドキュメントの注意事項について。"
 sidebar_position: 1
 pagination_next: null
 pagination_prev: null

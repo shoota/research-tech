@@ -1,6 +1,7 @@
 ---
 id: apollo-client-v4-codegen-monorepo
 title: Apollo Client v4 + graphql-codegen + Nxモノレポ設定ガイド
+description: "Apollo Client v4の主要変更点とgraphql-codegenによる型安全なGraphQL開発のNxモノレポ環境でのセットアップ・プリセット比較。"
 sidebar_position: 1
 tags: [graphql, apollo-client, codegen, monorepo, nx, typescript]
 last_update:

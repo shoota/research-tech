@@ -1,6 +1,7 @@
 ---
 id: css-build-system
 title: "CSS ビルドシステムの全体像 — プリプロセッサ・CSS Modules・型安全CSS"
+description: "Sass/SCSS・PostCSS・Lightning CSS・CSS Modules・vanilla-extractなど、CSSビルドパイプラインの各技術の役割と使い分けを体系的に整理。"
 sidebar_position: 1
 tags: [CSS, CSS Modules, Sass, SCSS, Less, PostCSS, Lightning CSS, TypeScript, vanilla-extract]
 last_update:

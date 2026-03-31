@@ -1,6 +1,7 @@
 ---
 id: playwright-ai-e2e-testing-trends
 title: "E2Eテスト×AI：自動解析・修正のトレンド"
+description: "Playwright Test Agents、MCP連携、商用サービスなど、AIによるE2Eテスト失敗の自動解析・修正技術のトレンドを調査。"
 sidebar_position: 3
 last_update:
   date: 2026-03-05

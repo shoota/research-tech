@@ -1,6 +1,7 @@
 ---
 id: monorepo-strategy
 title: モノレポ戦略 - Turborepo / Nx によるスケーラブルな開発基盤
+description: "TurborepoとNxの設計思想・機能比較、pnpm workspaces・Changesetsとの組み合わせによるモノレポの実践的な導入パターンを調査。"
 sidebar_position: 1
 tags: [monorepo, turborepo, nx, pnpm, build-system]
 last_update:

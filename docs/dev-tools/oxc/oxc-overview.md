@@ -1,6 +1,7 @@
 ---
 id: oxc-overview
 title: OXC（The JavaScript Oxidation Compiler）全体像
+description: "VoidZero社が開発するRust製JS/TSツール群OXCの全体像。パーサー・リンター・フォーマッター・トランスフォーマー等の構成と相互関係を俯瞰。"
 sidebar_position: 1
 tags: [oxc, rust, javascript, toolchain, voidzero]
 last_update:

@@ -1,6 +1,7 @@
 ---
 id: knip
 title: Knip - JavaScript/TypeScript プロジェクトの未使用コード検出ツール
+description: "未使用ファイル・エクスポート・依存関係をmark-and-sweepアルゴリズムで検出するKnipの仕組み、設定方法、モノレポ対応を解説。"
 sidebar_position: 6
 tags: [knip, unused-code, dead-code, lint, monorepo, typescript]
 last_update:

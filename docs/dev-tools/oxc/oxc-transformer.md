@@ -1,6 +1,7 @@
 ---
 id: oxc-transformer
 title: OXC Transformer - 高速TS/JSX変換
+description: "SWCの4倍・Babelの40倍高速なOXC TransformerによるTypeScript・JSX変換の仕組みとパフォーマンス比較。"
 sidebar_position: 5
 tags: [oxc, transformer, typescript, jsx, babel, swc, rust]
 last_update:

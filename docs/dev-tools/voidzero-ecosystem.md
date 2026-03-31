@@ -1,6 +1,7 @@
 ---
 id: voidzero-ecosystem
 title: VoidZero エコシステム全体像 - プロダクト・成熟度・言語選定
+description: "Evan You設立のVoidZero社によるVite・Vitest・Rolldown・OXCを中核としたRust製統一ツールチェーンの全プロダクトと成熟度を俯瞰。"
 sidebar_position: 1
 tags: [voidzero, vite, vitest, rolldown, oxc, rust, typescript, toolchain]
 last_update:

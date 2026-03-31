@@ -1,6 +1,7 @@
 ---
 id: shadcn-ui-design-and-architecture
 title: "shadcn/ui の設計思想とアーキテクチャ"
+description: "shadcn/uiの「ライブラリではなくコンポーネント集」という設計思想、Radix UI/Base UIの2系統アーキテクチャ、CSS変数ベースのテーマシステムを解説。"
 sidebar_position: 1
 last_update:
   date: 2026-03-06

@@ -1,6 +1,7 @@
 ---
 id: oxc-resolver
 title: OXC Resolver - 最速のモジュールリゾルバー
+description: "webpackのenhanced-resolveの30倍高速なRust製モジュールリゾルバー。CJS・ESM両対応のパス解決アルゴリズムと設定体系を解説。"
 sidebar_position: 7
 tags: [oxc, resolver, module-resolution, node, webpack, rust]
 last_update:

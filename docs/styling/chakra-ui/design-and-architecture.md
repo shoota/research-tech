@@ -1,6 +1,7 @@
 ---
 id: chakra-ui-design-and-architecture
 title: "Chakra UI v3 の設計思想とアーキテクチャ"
+description: "Chakra UI v3の合成コンポーネントへの転換、Panda CSS由来のレシピシステム、セマンティックトークン、Ark UI・Zag.jsエコシステムを調査。"
 sidebar_position: 1
 tags: [Chakra UI, React, デザインシステム, CSS-in-JS]
 last_update:

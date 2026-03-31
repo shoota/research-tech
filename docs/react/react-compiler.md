@@ -1,6 +1,7 @@
 ---
 id: react-compiler
 title: React Compiler - 自動メモ化コンパイラの仕組みと導入
+description: "React Compiler（旧React Forget）の自動メモ化の原理、ビルド時コンポーネント解析の仕組み、既存プロジェクトへの段階的導入戦略を解説。"
 sidebar_position: 4
 tags: [react, compiler, optimization, memoization]
 last_update:

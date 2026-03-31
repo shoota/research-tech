@@ -1,6 +1,7 @@
 ---
 id: react-server-components
 title: React Server Components / Server Actions 実践パターン
+description: "RSCとServer Actionsのメンタルモデル、Server/Client Componentの使い分け、データフェッチ戦略、パフォーマンス特性を包括的に整理。"
 sidebar_position: 3
 tags: [react, rsc, server-components, server-actions]
 last_update:

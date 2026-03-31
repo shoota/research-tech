@@ -1,6 +1,7 @@
 ---
 id: tanstack-router-start
 title: TanStack Router / TanStack Start - 型安全なルーティングとフルスタックフレームワーク
+description: "TanStack Routerの100%型安全なルーティング設計と、SSR・Server Functionsを提供するTanStack Startの機能をNext.js・Remixと比較。"
 sidebar_position: 6
 tags: [tanstack, router, typescript, fullstack, react]
 last_update:

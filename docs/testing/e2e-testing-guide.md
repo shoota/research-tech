@@ -1,6 +1,7 @@
 ---
 id: playwright-e2e-testing-guide
 title: PlaywrightによるE2Eテスト実践ガイド
+description: "Playwrightのセットアップからテスト記述、並列実行、Trace Viewerによるデバッグ、CI/CD統合までを体系的にまとめた実践ガイド。"
 sidebar_position: 2
 last_update:
   date: 2026-03-05

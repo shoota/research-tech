@@ -1,6 +1,7 @@
 ---
-id: testing-eslint-plugin-vitest-rules
+id: eslint-plugin-vitest-rules
 title: "@vitest/eslint-plugin ルール Tier 表 — 有効性評価ガイド"
+description: "Vitest公式ESLintプラグインの全80ルールを汎用性・重要度・便利さで評価し、必須/推奨/好み分かれるの3+1段階にTier分類。recommended設定例付き。"
 sidebar_position: 4
 tags: [vitest, eslint, testing, linter]
 last_update:

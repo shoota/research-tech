@@ -1,6 +1,7 @@
 ---
 id: chakra-ui-operations-and-ai
 title: "Chakra UI v3 の運用ガイド — AI連携・カスタマイズ・落とし穴"
+description: "Chakra UI v3のAI連携環境（MCP Server・llms.txt）、v2からの移行戦略、運用上の落とし穴とリスクについて調査。"
 sidebar_position: 2
 tags: [Chakra UI, React, AI連携, MCP, 運用]
 last_update:

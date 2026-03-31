@@ -1,6 +1,7 @@
 ---
 id: shadcn-ui-operations-and-pitfalls
 title: "shadcn/ui の運用ガイド — AI連携・カスタマイズ・落とし穴"
+description: "shadcn/uiのAI連携（v0・Claude・Copilot）、バージョニングなしのコンポーネント更新戦略、大規模チームでの運用パターンと注意点。"
 sidebar_position: 3
 last_update:
   date: 2026-03-06

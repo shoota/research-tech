@@ -1,6 +1,7 @@
 ---
 id: agentic-coding-tools-and-models-landscape
 title: "Agentic Coding ツール・AIモデルの全体像"
+description: "AIエージェントによる自律的コーディングツールとVibe Codingの主要プレイヤー、AIモデルの対応関係と技術的特徴を網羅的に整理。"
 sidebar_position: 1
 tags: [agentic-coding, vibe-coding, AI, LLM, coding-tools]
 last_update:

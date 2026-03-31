@@ -1,6 +1,7 @@
 ---
 id: vite-plugin-rsc
 title: Vite と React Server Components - @vitejs/plugin-rsc の仕組みと意義
+description: "Vite Environment APIを基盤にRSCのフレームワーク非依存なバンドラー統合を実現する@vitejs/plugin-rscの仕組みとエコシステムへの影響を調査。"
 sidebar_position: 2
 tags: [vite, react, rsc, server-components, bundler, plugin]
 last_update:

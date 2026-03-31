@@ -1,6 +1,7 @@
 ---
 id: react19-async-graphql
 title: React v19の非同期機能がGraphQL通信にもたらす利用価値
+description: "React v19のuse()フック・Suspense・Server ComponentsがApollo Client・urql・Relayとの統合にもたらす価値とDX改善を調査。"
 sidebar_position: 2
 last_update:
   date: 2026-03-05

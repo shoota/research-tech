@@ -1,6 +1,7 @@
 ---
 id: compiler-ast
 title: AST（抽象構文木）の基礎と TypeScript における活用
+description: "ASTの基礎概念をTypeScriptコンパイラを例に解説。カスタムESLintルール作成やcodemods等の応用に必要な知識を整理。"
 sidebar_position: 1
 tags: [AST, TypeScript, コンパイラ, 言語処理系, LSP]
 last_update:

@@ -1,6 +1,7 @@
 ---
 id: tailwind-design-tokens-concept
 title: デザイントークンの概念とTailwind CSSの設計変遷
+description: "W3C仕様に基づくデザイントークンの階層構造と、Tailwind CSS v1〜v4におけるトークン管理の進化を体系的に整理。"
 sidebar_position: 2
 last_update:
   date: 2026-03-05

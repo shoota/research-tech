@@ -1,6 +1,7 @@
 ---
 id: tailwind-v4-nextjs-vite-setup
 title: Tailwind CSS v4 の Next.js・Vite セットアップと利用方法
+description: "Tailwind CSS v4のNext.js・Viteでのセットアップ方法と、PostCSS・Viteプラグイン・CLIの3つのビルド統合方式の使い分けを解説。"
 sidebar_position: 4
 last_update:
   date: 2026-03-05

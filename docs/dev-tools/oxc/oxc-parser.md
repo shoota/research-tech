@@ -1,6 +1,7 @@
 ---
 id: oxc-parser
 title: OXC Parser - 最速のJavaScript/TypeScriptパーサー
+description: "SWCの3倍・Biomeの5倍高速なRust製JS/TSパーサー。OXCツールチェーン全体の基盤コンポーネントとしての役割と性能を調査。"
 sidebar_position: 4
 tags: [oxc, parser, ast, javascript, typescript, rust]
 last_update:

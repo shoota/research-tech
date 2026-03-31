@@ -1,6 +1,7 @@
 ---
 id: hono
 title: Hono - Web Standards ベースの超軽量マルチランタイムWebフレームワーク
+description: "Web Standards上に構築された軽量Webフレームワーク Hono の設計思想、マルチランタイム対応、ミドルウェア、RPC機能を調査。"
 sidebar_position: 3
 tags: [hono, web-framework, edge-computing, cloudflare-workers, multi-runtime, typescript]
 last_update:

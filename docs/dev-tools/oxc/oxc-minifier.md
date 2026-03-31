@@ -1,6 +1,7 @@
 ---
 id: oxc-minifier
 title: OXC Minifier - 高速JavaScriptミニファイアー
+description: "Rolldownのデフォルトミニファイアーとして採用されたOXC Minifierのデッドコード削除・変数名マングリング・最適化手法を調査。"
 sidebar_position: 6
 tags: [oxc, minifier, minification, optimization, rust]
 last_update:

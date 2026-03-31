@@ -1,6 +1,7 @@
 ---
 id: shadcn-ui-comparison-with-alternatives
 title: "shadcn/ui と類似デザインシステムの比較"
+description: "shadcn/uiを中心にMUI・Chakra UI・Ant Designなど主要React UIライブラリ8種を、設計哲学・バンドルサイズ・カスタマイズ性の観点で比較。"
 sidebar_position: 2
 last_update:
   date: 2026-03-06

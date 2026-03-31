@@ -1,6 +1,7 @@
 ---
 id: astro5
 title: Astro 5 - コンテンツファーストのWebフレームワーク
+description: "Astro 5のContent Layer API・Server Islands・Vite 6統合などの新機能と、Islands Architectureによるゼロ JSデフォルトの設計を調査。"
 sidebar_position: 1
 tags: [astro, framework, ssg, islands-architecture, content]
 last_update:

@@ -1,6 +1,7 @@
 ---
 id: playwright-overview
 title: Playwrightの基本と技術的位置付け
+description: "Selenium・Cypress・Puppeteerからの歴史的変遷を踏まえ、PlaywrightのアーキテクチャとAuto-wait機構、テスト分離の仕組みを解説。"
 sidebar_position: 1
 last_update:
   date: 2026-03-05

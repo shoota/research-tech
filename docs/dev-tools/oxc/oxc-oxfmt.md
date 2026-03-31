@@ -1,6 +1,7 @@
 ---
 id: oxc-oxfmt
 title: Oxfmt - Prettier互換の最速フォーマッター
+description: "Prettierの35倍・Biomeの3倍高速なRust製フォーマッターOxfmtの性能、Prettier完全互換の設計方針と対応状況を調査。"
 sidebar_position: 3
 tags: [oxc, oxfmt, formatter, prettier, rust]
 last_update:

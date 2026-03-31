@@ -1,6 +1,7 @@
 ---
 id: nextjs15-app-router
 title: Next.js 15/16 App Router 設計パターン
+description: "Next.js 15/16のApp Routerアーキテクチャ、キャッシュ戦略、PPR、RSC統合、およびOpenNext・vinextの代替実装について調査。"
 sidebar_position: 5
 tags: [nextjs, app-router, react, rsc, ssr, nextjs16, opennext, vinext]
 last_update:

@@ -1,6 +1,7 @@
 ---
 id: react-v19-promise-async-state-management
 title: React v19のPromiseとAsync Reactによる状態管理の変革
+description: "React v19のuseフック、Actions、useActionState、useOptimisticなど新プリミティブによる非同期データ取得と状態管理パラダイムの変化を調査。"
 sidebar_position: 1
 last_update:
   date: 2026-03-05

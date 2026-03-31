@@ -1,6 +1,7 @@
 ---
 id: oxc-oxlint
 title: Oxlint - 最速のJavaScript/TypeScriptリンター
+description: "ESLintの50〜100倍高速なRust製リンターOxlintの特徴、690以上のルール、ESLintとの互換性と移行方法を解説。"
 sidebar_position: 2
 tags: [oxc, oxlint, linter, eslint, rust]
 last_update:

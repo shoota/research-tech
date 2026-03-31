@@ -1,6 +1,7 @@
 ---
 id: vinext
 title: vinext - Next.js API を Vite 上に再実装した実験的フレームワーク
+description: "CloudflareがNext.js APIをVite上に再実装したvinextの仕組み。ビルド4.4倍高速・バンドル57%削減とCloudflare Workersデプロイを実現。"
 sidebar_position: 2
 tags: [vinext, nextjs, vite, cloudflare, rsc, opennext]
 last_update:

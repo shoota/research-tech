@@ -1,6 +1,7 @@
 ---
 id: web-platform-modern-web-apis
 title: Web API 最新動向 - View Transitions, Popover, Anchor Positioning
+description: "View Transitions・Popover・CSS Anchor Positioning・Navigation API等、2025〜2026年の最新Web標準APIの仕様とコード例を調査。"
 sidebar_position: 1
 tags: [web-api, view-transitions, popover, css, browser]
 last_update:

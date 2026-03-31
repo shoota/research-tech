@@ -1,6 +1,7 @@
 ---
 id: shadcn-cli-v4
 title: shadcn CLI v4 の新機能と既存コンポーネントへの影響
+description: "shadcn/cli v4のskills・presets・dry-run・モノレポ対応などの新機能と、Tailwind v4・React 19対応に伴う既存コンポーネントへの影響を調査。"
 sidebar_position: 4
 tags: [shadcn, ui, cli, tailwind-v4, react-19, radix-ui, ai]
 last_update:
