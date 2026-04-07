@@ -14,6 +14,10 @@ last_update:
 
 AST（Abstract Syntax Tree、抽象構文木）とは、ソースコードの構文構造を木構造で表現したデータ構造である。コンパイラやインタプリタの中核をなす中間表現であり、リンター・フォーマッター・IDE の補完機能など、現代の開発ツールの多くが AST を基盤として動作している。本ドキュメントでは AST の基礎概念を整理し、TypeScript コンパイラを例にその具体的な役割を解説する。
 
+:::info 関連ドキュメント
+- [TypeScript Language Server の仕組みと tsgo（TS v7）での変革](/docs/typescript/typescript-language-server-tsgo) — Language Server がどのように AST・型チェッカーを活用して言語機能を提供するかの詳細
+:::
+
 ## 背景・動機
 
 フロントエンド開発では ESLint、Prettier、TypeScript コンパイラなど AST を内部的に利用するツールを日常的に使っているが、その仕組みを理解する機会は少ない。AST の基礎を理解することで、カスタム ESLint ルールの作成、コードの自動変換（codemods）、静的解析ツールの構築といった応用が可能になる。
