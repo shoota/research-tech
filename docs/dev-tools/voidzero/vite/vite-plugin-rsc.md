@@ -15,7 +15,7 @@ last_update:
 `@vitejs/plugin-rsc` は、Vite の Environment API を基盤として React Server Components（RSC）のバンドラー統合を実現する公式プラグインである。本ドキュメントでは、RSC がなぜバンドラー統合を必要とするのかという根本原理から出発し、Vite の Environment API がどのようにマルチ環境ビルドを可能にするか、そしてこのプラグインが Waku・React Router・Cloudflare Workers などのエコシステムにどのような価値をもたらしているかを調査した。
 
 :::info 関連ドキュメント
-- [React Server Components / Server Actions 実践パターン](../../react/react-server-components)
+- [React Server Components / Server Actions 実践パターン](../../../react/react-server-components)
 - [Vite 8 + Rolldown - Rustベースの次世代ビルドツール](./vite8-rolldown)
 :::
 

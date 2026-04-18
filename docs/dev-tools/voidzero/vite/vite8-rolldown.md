@@ -30,7 +30,7 @@ Viteは長らくesbuild（依存関係プリバンドル用）とRollup（本番
 - **パフォーマンスの限界**: RollupはJavaScript製であり、大規模プロジェクトのビルドに時間がかかっていた
 - **プラグインの二重管理**: esbuildプラグインとRollupプラグインの両方を意識する必要があった
 
-VoidZero社が開発するRolldownは、この課題をRust製の単一バンドラーで解決する[[1]](#参考リンク)。OXCのParser・Transformer・Minifier・Resolverを内部で使用しており、VoidZeroエコシステムの中核を担う（OXCの詳細は[OXC全体像](https://shoota.github.io/research-tech/docs/dev-tools/oxc/oxc-overview)を参照）。
+VoidZero社が開発するRolldownは、この課題をRust製の単一バンドラーで解決する[[1]](#参考リンク)。OXCのParser・Transformer・Minifier・Resolverを内部で使用しており、VoidZeroエコシステムの中核を担う（OXCの詳細は[OXC全体像](https://shoota.github.io/research-tech/docs/dev-tools/voidzero/oxc/oxc-overview)を参照）。
 
 ## 調査内容
 
@@ -511,7 +511,7 @@ Vite 8 + Rolldownは、Viteの長年の課題であったesbuild/Rollupの二重
 - **慎重に検討すべき場合**: esbuild固有のオプションやRollupプラグインに深く依存しているプロジェクト、ネイティブデコレーターを使用しているプロジェクト（OXC Transformerが未対応）
 - **rolldown-viteでの段階的移行が推奨**: Vite 8正式版を待たず、既存プロジェクトでrolldown-viteパッケージを使って互換性を検証できる
 
-VoidZeroエコシステム全体として、OXC（[詳細ドキュメント](https://shoota.github.io/research-tech/docs/dev-tools/oxc/oxc-overview)）を基盤にRolldown → Vite → Vite+と積み上げる構造が明確になっており、Rust製ツールチェーンへの移行トレンドは今後さらに加速すると予想される。
+VoidZeroエコシステム全体として、OXC（[詳細ドキュメント](https://shoota.github.io/research-tech/docs/dev-tools/voidzero/oxc/oxc-overview)）を基盤にRolldown → Vite → Vite+と積み上げる構造が明確になっており、Rust製ツールチェーンへの移行トレンドは今後さらに加速すると予想される。
 
 ## 参考リンク
 

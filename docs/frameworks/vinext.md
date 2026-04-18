@@ -16,8 +16,8 @@ vinext は Cloudflare が開発した実験的フレームワークで、Next.js
 
 :::info 関連ドキュメント
 - [Next.js 15/16 App Router 設計パターン](../react/nextjs15-app-router)
-- [Vite と React Server Components - @vitejs/plugin-rsc の仕組みと意義](../dev-tools/vite/vite-plugin-rsc)
-- [Vite 8 + Rolldown - Rustベースの次世代ビルドツール](../dev-tools/vite/vite8-rolldown)
+- [Vite と React Server Components - @vitejs/plugin-rsc の仕組みと意義](../dev-tools/voidzero/vite/vite-plugin-rsc)
+- [Vite 8 + Rolldown - Rustベースの次世代ビルドツール](../dev-tools/voidzero/vite/vite8-rolldown)
 - [Hono - Web Standards ベースの超軽量マルチランタイムWebフレームワーク](../frameworks/hono) - Cloudflare Workers 上の別アプローチ
 :::
 
@@ -107,7 +107,7 @@ graph TD
 
 #### RSC の統合
 
-vinext は RSC の実装に `@vitejs/plugin-rsc`（Vite 公式プラグイン）を使用する。これにより、Next.js 独自の Turbopack ベースの RSC バンドラー統合を Vite のマルチ環境ビルド（rsc / ssr / client）に置き換えている。詳細は [Vite と RSC の関係](../dev-tools/vite/vite-plugin-rsc) を参照。
+vinext は RSC の実装に `@vitejs/plugin-rsc`（Vite 公式プラグイン）を使用する。これにより、Next.js 独自の Turbopack ベースの RSC バンドラー統合を Vite のマルチ環境ビルド（rsc / ssr / client）に置き換えている。詳細は [Vite と RSC の関係](../dev-tools/voidzero/vite/vite-plugin-rsc) を参照。
 
 #### 開発サーバーの違い
 
