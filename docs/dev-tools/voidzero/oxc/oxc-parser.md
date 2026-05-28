@@ -5,7 +5,7 @@ description: "SWCの3倍・Biomeの5倍高速なRust製JS/TSパーサー。OXC�
 sidebar_position: 4
 tags: [oxc, parser, ast, javascript, typescript, rust]
 last_update:
-  date: 2026-03-06
+  date: 2026-05-28
 ---
 
 # OXC Parser - 最速のJavaScript/TypeScriptパーサー
@@ -24,6 +24,14 @@ JavaScript/TypeScriptのパース処理は、リンター・フォーマッタ�
 
 - **SWCパーサーの3倍高速**
 - **Biomeの5倍高速**（ただしBiomeはCST（具体的構文木）を生成するため、直接比較には注意が必要）[[2]](#参考リンク)
+
+公式トップページに掲載されている計測例（Macbook Pro M3 Max、`typescript.js` のパース）[[4]](#参考リンク)：
+
+| パーサー | 処理時間 |
+|---------|---------|
+| OXC | 26.3 ms |
+| SWC | 84.1 ms |
+| Biome | 130.1 ms |
 
 ### 対応言語
 
@@ -90,14 +98,37 @@ OXC Parserは他のすべてのOXCプロダクトの基盤である：
         \-- Minifier (圧縮)
 ```
 
-Rolldownもバンドル時のコード解析にOXC Parserを使用している[[3]](#参考リンク)。
+Rolldownもバンドル時のコード解析にOXC Parserを使用している[[3]](#参考リンク)。2026年5月にリリースされた **Rolldown 1.0 安定版** でも基盤コンポーネントとして利用されている[[5]](#参考リンク)。
+
+### 既知の制限事項
+
+公式ドキュメントによると、現時点では以下の制限がある[[1]](#参考リンク)：
+
+- コメントの出力は未サポート（将来的に対応予定）
+
+### 新たな採用事例
+
+2026年4月にVoidZeroチームが発表した **Oxc-based Angular Compiler** では、OXC Parser を起点にAngularテンプレートを Rust で解析。型チェックをスキップする設計により、Angular CLI 比6.4倍、Webpack ベース Angular ツールチェーン比 20.7倍の高速化を達成した[[6]](#参考リンク)。
+
+## 直近のアップデート（2026-04〜2026-05）
+
+GitHubリリースから抽出した主な変更点：
+
+- セマンティック分析が識別子のハッシュ事前計算により **約4〜6%高速化**[[7]](#参考リンク)
+- rest assignment 構文に対するエラーメッセージの改善
+- スコープハンドリングの強化
+- enumのインライン化精度向上
 
 ## まとめ
 
-OXC ParserはJavaScript/TypeScriptパーサーとして業界最速クラスの性能を持ち、Test262の全テストをパスする高い標準準拠性を実現している。npm パッケージ（`oxc-parser`）としてNode.jsから、Rust crateとしてRustから利用可能で、OXCエコシステム全体およびRolldownの基盤として広く採用されている。
+OXC ParserはJavaScript/TypeScriptパーサーとして業界最速クラスの性能を持ち、Test262の全テストをパスする高い標準準拠性を実現している。npm パッケージ（`oxc-parser`）としてNode.jsから、Rust crateとしてRustから利用可能で、OXCエコシステム全体および Rolldown 1.0、Oxc-based Angular Compiler の基盤として広く採用されている。
 
 ## 参考リンク
 
 1. [OXC Parser - 公式ドキュメント](https://oxc.rs/docs/guide/usage/parser)
 2. [All Benchmarks - OXC公式](https://oxc.rs/docs/guide/benchmarks)
 3. [OXC GitHub リポジトリ](https://github.com/oxc-project/oxc)
+4. [OXC 公式サイト](https://oxc.rs/)
+5. [Announcing Rolldown 1.0](https://voidzero.dev/posts/announcing-rolldown-1-0)
+6. [How we made the Angular Compiler faster using AI](https://voidzero.dev/posts/oxc-angular-compiler)
+7. [What's New in ViteLand: February 2026 Recap](https://voidzero.dev/posts/whats-new-feb-2026)

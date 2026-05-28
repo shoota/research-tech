@@ -5,14 +5,14 @@ description: "Prettierの35倍・Biomeの3倍高速なRust製フォーマッタ�
 sidebar_position: 3
 tags: [oxc, oxfmt, formatter, prettier, rust]
 last_update:
-  date: 2026-03-06
+  date: 2026-05-28
 ---
 
 # Oxfmt - Prettier互換の最速フォーマッター
 
 ## 概要
 
-OxfmtはOXCコンパイラスタック上に構築されたコードフォーマッターである。Prettierの35倍高速で、JavaScript/TypeScriptのPrettier準拠率100%を達成している。
+OxfmtはOXCコンパイラスタック上に構築されたコードフォーマッターである。Prettierの30〜36倍高速で、JavaScript/TypeScriptのPrettier準拠率100%を達成している。2026年2月に **アルファ版からベータ版へ昇格** した[[6]](#参考リンク)。最新版は **v0.52.0**（2026-05-26リリース）[[7]](#参考リンク)。
 
 ## 背景・動機
 
@@ -22,8 +22,8 @@ Prettierはデファクトスタンダードのフォーマッターだが、大
 
 ### パフォーマンス
 
-- **Prettierの35倍高速**
-- **Biomeの3倍高速**
+- **Prettierの30〜36倍高速**（リリースごとに改善が継続。2026年2月時点で36倍に到達[[6]](#参考リンク)、現行公式トップページ表記は30倍）
+- **Biomeの2〜3倍高速**
 - OXCコンパイラスタック上に構築され、大規模コードベースに最適化[[2]](#参考リンク)
 
 ### 対応言語（13+）
@@ -51,6 +51,16 @@ Prettierでは別途プラグインが必要な以下の機能がビルトイン
 - **Tailwind CSSクラスソート**: Tailwindの推奨順序に従ったクラス名の自動並べ替え
 - **package.jsonフィールドソート**: package.jsonのキーを標準的な順序に並べ替え
 - **埋め込みフォーマット**: CSS-in-JS、GraphQLテンプレートリテラル等
+- **JSDocコメントの整形**（2026年3月追加）[[8]](#参考リンク)
+- **Vue SFC（Single File Component）の整形改善**（2026年3月）[[8]](#参考リンク)
+- **動的設定ファイル `oxfmt.config.ts` のサポート**（2026年3月）[[8]](#参考リンク)
+
+### 1.0 到達に向けたロードマップ
+
+ベータ版の主要な残タスクとして、以下が公開されている[[6]](#参考リンク)：
+
+- Prettier プラグインのネイティブ対応（Svelte など）
+- 追加オプションの拡充
 
 ## 検証結果
 
@@ -104,14 +114,20 @@ CLIの振る舞いがPrettierと同じに設計されているため、CIスク�
 <div className="flex items-center rounded-lg bg-white p-4 shadow-md">
 ```
 
+### 採用事例の拡大（2026-02〜2026-04）
+
+- **Turborepo・Hugging Face・Lichess・Oxide Computer**: 本番導入[[6]](#参考リンク)
+- **Netlify**: ビルドシステムが Oxfmt に移行し、Prettier を置き換え[[9]](#参考リンク)
+
 ## まとめ
 
-OxfmtはPrettierのドロップイン代替として実用段階に入っている。以下の点が特に注目される：
+Oxfmt は2026年2月にベータ版へ昇格し、Prettier のドロップイン代替として実用段階に入っている。以下の点が特に注目される：
 
 - **100% Prettier準拠**: 出力の互換性が保証されており、移行リスクが極めて低い
-- **35倍の高速化**: 大規模プロジェクトのフォーマット時間を大幅に短縮
-- **ビルトイン機能**: インポートソートやTailwindクラスソートなど、追加プラグイン不要で利用可能
+- **30〜36倍の高速化**: リリースごとに性能が改善し、大規模プロジェクトのフォーマット時間を大幅に短縮
+- **ビルトイン機能の拡大**: インポートソート、Tailwindクラスソートに加え、JSDoc 整形、Vue SFC 整形改善、動的設定ファイル `oxfmt.config.ts` をサポート
 - **簡単な移行**: `--migrate prettier`コマンドで設定を一括移行
+- **大型採用事例**: Netlify のビルドシステムが移行するなど、エンタープライズでの採用が急拡大
 
 Prettierからの移行先として最も現実的な選択肢と言える。
 
@@ -122,3 +138,7 @@ Prettierからの移行先として最も現実的な選択肢と言える。
 3. [What's New in ViteLand: January 2026 Recap](https://voidzero.dev/posts/whats-new-jan-2026)
 4. [What's New in ViteLand: December 2025 Recap](https://voidzero.dev/posts/whats-new-dec-2025)
 5. [OXC GitHub リポジトリ](https://github.com/oxc-project/oxc)
+6. [What's New in ViteLand: February 2026 Recap](https://voidzero.dev/posts/whats-new-feb-2026)
+7. [oxfmt v0.52.0 リリースノート](https://github.com/oxc-project/oxc/releases)
+8. [Tales from the Void: March 2026 Recap](https://voidzero.dev/posts/whats-new-mar-2026)
+9. [Tales from the Void: April 2026 Recap](https://voidzero.dev/posts/whats-new-apr-2026)

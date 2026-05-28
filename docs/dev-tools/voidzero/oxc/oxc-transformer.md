@@ -5,7 +5,7 @@ description: "SWCの4倍・Babelの40倍高速なOXC TransformerによるTypeScr
 sidebar_position: 5
 tags: [oxc, transformer, typescript, jsx, babel, swc, rust]
 last_update:
-  date: 2026-03-06
+  date: 2026-05-28
 ---
 
 # OXC Transformer - 高速TS/JSX変換
@@ -13,6 +13,10 @@ last_update:
 ## 概要
 
 OXC TransformerはTypeScript・JSX・モダンJavaScriptの変換（トランスパイル）を行うツールである。SWCの4倍・Babelの40倍高速で、メモリ消費も大幅に削減している。
+
+:::tip ステータス更新（2026-05）
+2026年5月時点の公式トップページで **Transformer のステータスがアルファ版から「安定版（Stable）」に昇格** した[[4]](#参考リンク)。Rolldown 1.0 安定版にも組み込まれており、本番採用が現実的なフェーズに入っている。
+:::
 
 ## 背景・動機
 
@@ -86,7 +90,7 @@ console.log(result.code);
 |-----------|---------|
 | `unplugin-oxc` | Vite / Rollup / webpack / esbuild 等 |
 | `unplugin-isolated-decl` | `.d.ts`生成用 |
-| `oxc-webpack-loader` | webpack専用ローダー |
+| `oxc-webpack-loader` | webpack専用ローダー（webpack→Rolldownの段階的移行を支援）[[5]](#参考リンク) |
 
 ```bash title="unplugin-oxcのインストール"
 pnpm add -D unplugin-oxc
@@ -101,10 +105,12 @@ oxc = { version = "*", features = ["transformer"] }
 
 ## まとめ
 
-OXC Transformerは現在アルファ版だが、Babelの40倍という圧倒的な速度差と大幅なメモリ削減を実現している。Rolldown経由でVite 8のビルドパイプラインに組み込まれており、実質的に広範な本番利用が進んでいる。`unplugin-oxc`を使えば既存のビルド環境にも容易に統合できる。
+OXC Transformer は **2026年5月時点で安定版に到達** し、Babel の40倍という圧倒的な速度差と大幅なメモリ削減を維持している。Rolldown 1.0 経由で Vite 8 系のビルドパイプラインに組み込まれており、`unplugin-oxc` を使えば既存のビルド環境にも容易に統合できる。webpack からの段階的移行を狙う場合は `oxc-webpack-loader` も選択肢となる。
 
 ## 参考リンク
 
 1. [OXC Transformer - 公式ドキュメント](https://oxc.rs/docs/guide/usage/transformer)
 2. [All Benchmarks - OXC公式](https://oxc.rs/docs/guide/benchmarks)
 3. [OXC GitHub リポジトリ](https://github.com/oxc-project/oxc)
+4. [OXC 公式サイト](https://oxc.rs/)
+5. [What's New in ViteLand: February 2026 Recap](https://voidzero.dev/posts/whats-new-feb-2026)

@@ -5,14 +5,18 @@ description: "Rolldownのデフォルトミニファイアーとして採用さ�
 sidebar_position: 6
 tags: [oxc, minifier, minification, optimization, rust]
 last_update:
-  date: 2026-03-06
+  date: 2026-05-28
 ---
 
 # OXC Minifier - 高速JavaScriptミニファイアー
 
 ## 概要
 
-OXC MinifierはJavaScriptコードの圧縮・最適化を行うツールである。Rolldownのデフォルトミニファイアーとして採用されており、デッドコード削除・変数名マングリング・シンタックス最適化を提供する。
+OXC MinifierはJavaScriptコードの圧縮・最適化を行うツールである。Rolldown 1.0 のデフォルトミニファイアーとして採用されており、デッドコード削除・変数名マングリング・シンタックス最適化を提供する。
+
+:::info ステータス
+2026年5月時点で OXC プロダクトの中で **唯一アルファ版（alpha）が継続中**[[4]](#参考リンク)。Parser・Transformer・Resolver・Oxlint は安定版、Oxfmt はベータ版に到達している。
+:::
 
 ## 背景・動機
 
@@ -93,7 +97,7 @@ pnpm add oxc-minify
 
 ### Rolldown経由の利用
 
-Vite 8 / RolldownではOXC Minifierがデフォルトで使用される。特別な設定は不要。
+Vite 8 / Rolldown では OXC Minifier がデフォルトで使用される。特別な設定は不要。2026年5月にリリースされた **Rolldown 1.0 安定版** にも組み込まれている[[5]](#参考リンク)。
 
 ### ビルドツール統合
 
@@ -110,12 +114,25 @@ pnpm add -D unplugin-oxc
 oxc = { version = "*", features = ["minifier"] }
 ```
 
+## 直近のアップデート（2026-04〜2026-05）
+
+GitHubリリースノートから抽出した主要な改善[[6]](#参考リンク)：
+
+- **`legalComments` オプションを `minify` API で公開**（v0.133.0、2026-05-26）
+- **CJSモジュールヒントの保持** を改善（CommonJS互換性向上）
+- **IIFE（即時関数）の最適化** を強化
+- **デッドコード削除の精度** をpeephole最適化レベルで改良
+- アルファ版でありながら、リリースサイクルが安定（おおむね週次）
+
 ## まとめ
 
-OXC Minifierは現在アルファ版であり、本番利用には出力の十分なテストが推奨される。しかしRolldownのデフォルトミニファイアーとして既にVite 8エコシステムに組み込まれており、事実上広範な利用が始まっている。OXCコンパイラスタックとの密接な統合により、パース→変換→ミニファイの一連の処理をシームレスかつ高速に実行できる点が強みである。
+OXC Minifier は OXC プロダクトの中で唯一アルファ版が継続中だが、Rolldown 1.0 のデフォルトミニファイアーとして組み込まれており、事実上広範な利用が始まっている。OXC コンパイラスタックとの密接な統合により、パース→変換→ミニファイの一連の処理をシームレスかつ高速に実行できる点が強み。本番投入時は依然として出力の十分なテストが推奨されるが、CJS互換性や `legalComments` 制御など実運用で求められる機能が継続的に整備されている。
 
 ## 参考リンク
 
 1. [OXC Minifier - 公式ドキュメント](https://oxc.rs/docs/guide/usage/minifier)
 2. [OXC GitHub リポジトリ](https://github.com/oxc-project/oxc)
 3. [Vite 8 Beta: The Rolldown-powered Vite](https://voidzero.dev/posts/announcing-vite-8-beta)
+4. [OXC 公式サイト](https://oxc.rs/)
+5. [Announcing Rolldown 1.0](https://voidzero.dev/posts/announcing-rolldown-1-0)
+6. [oxc-project releases (GitHub)](https://github.com/oxc-project/oxc/releases)
